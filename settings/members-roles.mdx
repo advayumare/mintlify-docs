@@ -1,0 +1,179 @@
+---
+title: "Members & Roles"
+description: "Invite and manage workspace members, create roles, and configure permissions for each module in your CRM."
+---
+
+Manage who has access to your workspace and what they can do. Access these settings from **Settings → Workspace**.
+
+<Tabs>
+  <Tab title="Members">
+
+Access from: **Settings → Workspace → Members**
+
+The Members module lets you manage all users in your workspace. From here, you can invite new members, assign roles, adjust daily limits, and remove users when needed.
+
+## Invite by link
+
+Invite team members quickly using a secure join link.
+
+- A unique workspace invite link is automatically generated.
+- Click **Copy Link** to share it with your team.
+- Anyone with the link can create an account and join the workspace.
+
+<Warning>
+  For security, periodically regenerate or disable old invite links if they are no longer needed.
+</Warning>
+
+## Invite by email
+
+Invite users directly via email.
+
+<Steps>
+  <Step title="Enter the email address">
+    Type the user's email address in the invite input field.
+  </Step>
+  <Step title="Click Send Invite">
+    The invited user receives an email with instructions to join.
+  </Step>
+</Steps>
+
+Pending invites appear below the input field and show:
+
+- **Email** of the invited user
+- **Expiry** date (invites typically expire in **30 days**)
+- **Actions** — Resend Invite or Delete Invite
+
+## Manage members
+
+This section lists all existing members in the workspace along with:
+
+- **Name**
+- **Email**
+- **Role** — Admin, Member, or custom roles
+- **Daily limit** — the member's allowed daily activity limit (e.g., emails sent per day)
+
+### Editing daily limits
+
+Click the **edit icon** next to the Daily Limit field to adjust a member's allowed daily limit. Set reasonable limits to prevent misuse or system overload.
+
+### Roles
+
+Roles define a member's permissions throughout the system. See the **Roles & Permissions** tab for details on creating and managing roles.
+
+## Pending invites
+
+Pending invitations show:
+
+- Status of the invite
+- Expiration timeline
+- Options to resend or remove the invite
+
+## Best practices
+
+- Assign the appropriate roles to maintain workspace security.
+- Use **invite by link** for quick onboarding of multiple users.
+- Use **email invites** when inviting specific individuals privately.
+- Regularly review member access and remove inactive or former employees.
+- Set reasonable daily limits to prevent misuse or system overload.
+
+</Tab>
+  <Tab title="Roles & Permissions">
+
+Access from: **Settings → Workspace → Roles & Permissions**
+
+The Roles & Permissions module lets workspace admins manage user roles and define what each role can access or modify within the CRM. You can create custom roles, assign members to them, and configure detailed permissions for each module.
+
+## All roles
+
+This section displays all existing roles in your workspace, along with how many users are assigned to each.
+
+- **Admin** — Full access to all modules
+- **Member** — Standard user role
+- **Manager** — Higher-level role with extended permissions
+- **Custom roles** — Roles created by your workspace admins
+
+Each role card shows:
+
+- Role name
+- **Assigned to** count (number of members)
+- A link to open **Manage Permissions** for that role
+
+## Creating a new role
+
+Click **+ Create Role** to define a new role. You can:
+
+- Name the new role
+- Configure module permissions
+- Assign users later
+
+Custom roles help you tailor access for sales reps, managers, assistants, and other team structures.
+
+## Set default role
+
+You can define which role is automatically applied to new members joining your workspace. Use the **Select role** dropdown to choose the default role.
+
+## Managing a role
+
+Click any role from the list to open the **Manage Permissions** page for that role. The page has two tabs: **Assignments** and **Permissions**.
+
+### Assignments tab
+
+This tab shows all users currently assigned to the selected role. For each user you see:
+
+- Profile avatar
+- Name
+- Email
+- Assigned date
+- **Edit icon** to reassign role
+
+Click **Assign Role** to add more users to this role.
+
+### Permissions tab
+
+This tab lets you configure detailed permissions for each module in the CRM.
+
+**Available permission types:**
+
+- **Create**
+- **Read**
+- **Update**
+- **Delete**
+- **Invite / Assign** (for some entities)
+
+**Modules include:**
+
+- Company
+- Contact
+- Deal
+- Lead
+- Any other modules your CRM supports
+
+You can check individual permissions, use **Select All** to grant full access, or uncheck items to restrict a role. Once you finish updating, click **Save Changes**.
+
+## Example use cases
+
+<AccordionGroup>
+  <Accordion title="Sales team">
+    - Read/Write access to Leads, Contacts, and Deals
+    - No access to Roles, Members, or Workspace settings
+  </Accordion>
+  <Accordion title="Managers">
+    - Full access to sales modules
+    - Can assign leads and manage team members
+  </Accordion>
+  <Accordion title="Assistants">
+    - Read-only access to deals
+    - Can update contacts
+    - Cannot delete records
+  </Accordion>
+</AccordionGroup>
+
+## Best practices
+
+- Keep the **Admin** role limited to workspace owners or trusted individuals.
+- Use custom roles to match your internal team structure.
+- Review role permissions quarterly to maintain security.
+- Apply the least required permissions to avoid accidental data loss.
+
+</Tab>
+</Tabs>

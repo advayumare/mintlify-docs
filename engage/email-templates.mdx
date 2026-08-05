@@ -1,0 +1,89 @@
+---
+title: "Email Templates"
+description: "Create and manage reusable email content to keep your outreach consistent and save time across sequences."
+---
+
+Email templates let you save email subject lines and body copy as reusable content. When you build an [email sequence](/engage/email-sequences), you can insert a template instead of writing each email from scratch. Templates support dynamic fields, so the same template personalizes itself for every recipient.
+
+## Create a template
+
+<Steps>
+  <Step title="Open Email Templates">
+    In the left sidebar, navigate to **Engage → Email Templates**. Click **Create Template**.
+  </Step>
+  <Step title="Name the template">
+    Give the template a descriptive internal name, such as "First Touch — SaaS Prospect" or "Follow-up #2 — No Reply". The name is only visible to your team.
+  </Step>
+  <Step title="Write the subject line">
+    Enter the email subject. You can include dynamic fields here — for example, `Intro for {{company}}` or `Quick question, {{first_name}}`.
+  </Step>
+  <Step title="Write the body">
+    Use the editor to write your email. Format text, add links, and insert dynamic fields where you want personalized content. Keep the message focused — one clear ask per email performs best.
+  </Step>
+  <Step title="Save the template">
+    Click **Save**. The template is now available to select when building sequence steps.
+  </Step>
+</Steps>
+
+## Use dynamic fields
+
+Dynamic fields pull live data from each recipient's CRM record and insert it into your email at send time. Wrap field names in double curly braces:
+
+| Field | Inserts |
+|---|---|
+| `{{first_name}}` | Recipient's first name |
+| `{{last_name}}` | Recipient's last name |
+| `{{company}}` | Company name |
+| `{{job_title}}` | Job title |
+| `{{sender_name}}` | Name of the person sending the sequence |
+
+<Tip>
+  Set fallback values for fields that might be empty. Write `{{first_name | "there"}}` to output "Hi there" when no first name is on record, instead of "Hi ," — which looks broken.
+</Tip>
+
+You can use dynamic fields in both the subject line and the email body.
+
+## Use a template in an email sequence
+
+When adding or editing a step in an [email sequence](/engage/email-sequences):
+
+1. Click **Add Step** (or edit an existing step).
+2. Select **Use Template** instead of writing the email directly.
+3. Search for and select your template.
+4. The subject line and body populate automatically. You can edit them for this specific step without modifying the original template.
+
+<Note>
+  Editing a template after it has been used in a sequence does not change emails that have already been sent. It also does not update sequence steps that were saved with a copy of the template content — you need to re-select the template in each step to pick up changes.
+</Note>
+
+## Edit or delete a template
+
+From the **Email Templates** list:
+
+- Click a template name to open and edit it.
+- Click the **...** menu next to a template to duplicate or delete it.
+
+Before deleting a template, check whether any active sequences reference it. The CRM warns you if a template is in use.
+
+## Organize templates
+
+Use clear, consistent naming to keep your template library manageable as it grows. Some teams prefix names by category:
+
+- `[Prospect] First Touch`
+- `[Prospect] Follow-up 2`
+- `[Nurture] Trial Day 3`
+- `[Re-engage] 90-Day Dormant`
+
+This makes it easier to find the right template when building a new sequence.
+
+## Best practices
+
+- **Write one goal per template.** Each email should have a single call to action — a meeting request, a content offer, or a reply prompt. Multiple asks dilute focus.
+- **Keep it short.** Three to five sentences is often enough for a prospecting email. Longer emails get read less.
+- **Test subject lines.** Clone a template and vary the subject to run A/B comparisons across sequences.
+- **Review templates regularly.** Update templates when your product, pricing, or messaging changes. Stale copy hurts credibility.
+- **Use dynamic fields strategically.** Personalization beyond a first name — like `{{company}}` or `{{job_title}}` — helps emails feel relevant rather than automated.
+
+## Related
+
+- [Email Sequences](/engage/email-sequences) — Use templates to build automated multi-step campaigns.

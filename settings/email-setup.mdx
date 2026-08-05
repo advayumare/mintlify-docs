@@ -1,0 +1,146 @@
+---
+title: "Email Setup"
+description: "Connect your email account to send, receive, and track emails directly from the CRM."
+---
+
+Connecting an email account to the CRM lets you send, receive, and track emails without leaving the platform. You can connect one email account per workspace.
+
+Access from: **Settings → User Settings → Email Accounts**
+
+## Manage your email connection
+
+The Email Accounts page shows your connected account with the following details:
+
+- **Provider** — Email service (Google, Microsoft, or SMTP)
+- **Email address** — The connected account
+- **Description** — Optional notes about the account
+- **Status** — Connection status (active or inactive)
+- **Actions** — Options to edit or remove the connection
+
+<Note>
+  Only one email connection per workspace is allowed. If you need to switch accounts, remove the existing connection first.
+</Note>
+
+## Adding a new email connection
+
+Click **\+ Add Connection** to open the Add Email Connection dialog, then follow these steps:
+
+<Steps>
+  <Step title="Select your email provider">
+    Choose from:
+
+    - **Google** (Gmail and Google Workspace)
+    - **Microsoft** (Outlook and Microsoft 365)
+    - **SMTP** (custom SMTP server)
+  </Step>
+  <Step title="Enter your credentials">
+    - **Email address** — the email you want to connect
+    - **App password** — your provider's app password (required for authentication; see instructions below)
+    - **Description** _(optional)_ — a label to help identify this connection
+  </Step>
+  <Step title="Click Add Connection">
+    Your email account is linked to the CRM.
+  </Step>
+</Steps>
+
+## How to get an app password
+
+<Tabs>
+  <Tab title="Google">
+    Google requires an App Password when connecting Gmail or Google Workspace accounts to third-party applications like this CRM. You must have 2-Step Verification enabled on your Google account before you can create an App Password.
+
+    <Steps>
+      <Step title="Sign in to your Google account">
+        Go to [myaccount.google.com](https://myaccount.google.com) and sign in.
+      </Step>
+      <Step title="Open Security settings">
+        In the left sidebar, click **Security**.
+      </Step>
+      <Step title="Enable 2-Step Verification (if not already enabled)">
+        Under "How you sign in to Google", click **2-Step Verification** and follow the prompts to turn it on.
+      </Step>
+      <Step title="Navigate to App Passwords">
+        Return to the **Security** page. Under "How you sign in to Google", click **App passwords**. You may be prompted to sign in again.
+      </Step>
+      <Step title="Create a new App Password">
+        In the "App name" field, enter a label such as "Thread CRM", then click **Create**.
+      </Step>
+      <Step title="Copy the generated password">
+        Google displays a 16-character app password. Copy it and paste it into the **App Password** field in the CRM. This password is shown only once.
+      </Step>
+      <Step title="Click Done">
+        Close the dialog in Google. Your app password is now active.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Use a descriptive app name (e.g., "B2B CRM") so you can identify and revoke it later if needed.
+    </Tip>
+  </Tab>
+  <Tab title="Microsoft">
+    Microsoft requires an App Password when you have multi-factor authentication (MFA) enabled and want to connect Outlook or Microsoft 365 to third-party apps via SMTP. MFA must be enabled on your account before you can create an App Password.
+
+    <Steps>
+      <Step title="Sign in to the Security info page">
+        Go to [mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info) and sign in with your Microsoft 365 email address and password.
+      </Step>
+      <Step title="Complete MFA verification">
+        Enter the verification code sent to your phone, or use the Microsoft Authenticator app to confirm your identity.
+      </Step>
+      <Step title="Click Add sign-in method">
+        On the Security info page, select **Add sign-in method**.
+
+        <Info>
+          To use app passwords, you need an MFA method set up first. An admin may need to enable and enforce MFA for your account before this option appears.
+        </Info>
+      </Step>
+      <Step title="Select App password">
+        Under **Choose a method**, select **App password**, then click **Add**.
+      </Step>
+      <Step title="Name the app password">
+        Enter a name to help you remember what this password is for (for example, the name of the device or application), then click **Next**.
+      </Step>
+      <Step title="Copy the generated password">
+        Your app password is displayed. Click **Copy** and save it in a secure location. The password cannot be displayed again.
+      </Step>
+      <Step title="Click Done">
+        Close the dialog. You can return to the Security info page at any time to create or delete app passwords.
+      </Step>
+    </Steps>
+
+    <Tip>
+      You can use the same app password on multiple devices, or create a separate one for each application.
+    </Tip>
+  </Tab>
+  <Tab title="SMTP">
+    For custom SMTP servers, you connect using your standard SMTP credentials rather than an app password.
+
+    When selecting the **SMTP** provider in the Add Email Connection dialog:
+
+    - Enter your **email address**
+    - Enter your **SMTP password** or app password if your mail server requires one
+    - Add an optional **description** to identify the connection
+
+    <Info>
+      Confirm your SMTP server settings (host, port, and authentication requirements) with your IT team before connecting.
+    </Info>
+  </Tab>
+</Tabs>
+
+## Updating or removing a connection
+
+From the Email Accounts page, you can manage your existing connection:
+
+- **Edit** — Update the account description or credentials.
+- **Remove** — Disconnect the email account from the CRM.
+
+<Warning>
+  Once you remove a connection, emails will no longer sync with the CRM.
+</Warning>
+
+## Best practices
+
+- Always use **App Passwords** instead of your main email password. App passwords are scoped to the CRM and can be revoked independently.
+- Ensure you have admin permission if connecting a workspace-wide account.
+- For SMTP connections, confirm server settings with your IT team before connecting.
+- Keep only one active email connection per workspace to avoid conflicts.

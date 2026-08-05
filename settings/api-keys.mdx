@@ -1,0 +1,71 @@
+---
+title: "API Keys"
+description: "Generate and manage API keys to authenticate service-to-service requests with the Thread CRM API."
+---
+
+API keys allow external applications and services to authenticate with the CRM API. Use them to build integrations, automate workflows, or connect third-party tools to your workspace.
+
+Access from: **Settings → API Keys**
+
+## Generating an API key
+
+<Steps>
+  <Step title="Sign in to your workspace">
+    Log in to your workspace at [crm.b2bleadsmarket.com](https://crm.b2bleadsmarket.com) using your credentials.
+  </Step>
+  <Step title="Navigate to API Keys">
+    Click the **Settings** icon in the navigation bar. In the settings sidebar, click **API Keys**.
+  </Step>
+  <Step title="Click Generate New Key">
+    Click the **Generate New Key** button to open the key creation form.
+  </Step>
+  <Step title="Fill out the form">
+    Enter a name or description for the key so you can identify it later (for example, "Production Integration" or "Zapier Connector").
+  </Step>
+  <Step title="Click Generate API Key">
+    Your new API key is generated and displayed.
+  </Step>
+  <Step title="Save the key immediately">
+    Copy your API key and store it in a secure location such as a password manager or secrets vault.
+
+    <Warning>
+      The API key is shown only once. You will not be able to view it again after closing the dialog. If you lose the key, you will need to regenerate it.
+    </Warning>
+  </Step>
+  <Step title="Click Done">
+    Close the dialog to return to the API Keys list.
+  </Step>
+</Steps>
+
+## Managing API keys
+
+The API Keys page lists all keys associated with your workspace. For each key you can:
+
+- **View** — see the key name, creation date, and current status
+- **Toggle status** — activate or deactivate a key without deleting it
+- **Regenerate** — replace the key with a new one (the old key is immediately invalidated)
+- **Delete** — soft-delete the key to revoke access permanently
+
+<Warning>
+  Regenerating or deleting a key immediately revokes access for any application using that key. Update integrations with the new key before regenerating.
+</Warning>
+
+## Using your API key in requests
+
+Include your API key as a Bearer token in the `Authorization` header of every API request.
+
+```bash
+curl -X GET https://api.b2bleadsmarket.com/lead/all \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+The CRM API follows the [OpenAPI 3.1.1 specification](https://swagger.io/specification/) and supports standard CRUD operations, pagination, filtering, sorting, and relational linking between entities such as Companies, Contacts, Leads, Deals, Tasks, Calls, Notes, and Workspace Members.
+
+## Security best practices
+
+- **Save the key immediately** after generating it — it will not be shown again.
+- **Store keys securely** in a secrets manager or environment variable, never in source code or version control.
+- **Rotate keys regularly** — regenerate keys on a scheduled basis or whenever a team member with access leaves.
+- **Use separate keys per integration** — this lets you revoke access for one service without affecting others.
+- **Deactivate unused keys** — toggle inactive keys off rather than leaving them permanently active.

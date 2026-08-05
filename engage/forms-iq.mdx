@@ -1,0 +1,121 @@
+---
+title: "FormsIQ"
+description: "Build web forms that capture leads directly into your CRM without any manual data entry."
+---
+
+FormsIQ is the built-in web form builder for Thread CRM. Use it to create forms that capture visitor information from your website and send it straight into your CRM as new lead records — no manual import, no copy-paste.
+
+When someone submits a FormsIQ form, a lead record is created automatically with the submitted data mapped to the correct fields. Your team can see new submissions immediately and act on them right away.
+
+## Create a form
+
+<Steps>
+  <Step title="Open FormsIQ">
+    In the left sidebar, navigate to **Engage → FormsIQ**. Click **Create Form**.
+  </Step>
+  <Step title="Name your form">
+    Give the form an internal name (for example, "Contact Page Form" or "Demo Request — Homepage"). This name is visible only to your team in the CRM.
+  </Step>
+  <Step title="Add fields">
+    Click **Add Field** to add form inputs. For each field:
+
+    - Choose the field type (text, email, phone, dropdown, textarea, etc.).
+    - Enter a label (what visitors see).
+    - Mark the field as **Required** if submission should be blocked without it.
+    - Map it to a CRM field so submitted data lands in the right place on the lead record.
+
+    Common fields to include: First name, Last name, Work email, Company, Phone, and a message or inquiry field.
+  </Step>
+  <Step title="Configure form settings">
+    Set a **confirmation message** or **redirect URL** to show after a successful submission. You can also set a default lead owner to assign new submissions to a specific team member automatically.
+  </Step>
+  <Step title="Save and publish">
+    Click **Save**, then toggle the form to **Active**. Only active forms accept submissions.
+  </Step>
+</Steps>
+
+## Embed a form on your website
+
+After publishing, FormsIQ gives you two ways to add the form to your website:
+
+<CardGroup cols={2}>
+  <Card title="Embed code" icon="code">
+    Copy the HTML snippet and paste it into your website's source code wherever you want the form to appear.
+  </Card>
+
+  <Card title="Direct link" icon="link">
+    Use the hosted form URL to link directly to the form — useful for email campaigns or landing pages where embedding isn't an option.
+  </Card>
+</CardGroup>
+
+To get the code or link:
+
+1. Open the form from the **FormsIQ** list.
+2. Click **Embed / Share**.
+3. Copy the snippet or URL.
+
+<Note>
+  The embed code uses an iframe. If your website has a Content Security Policy that blocks iframes, you may need to allowlist the CRM domain. Contact your web developer for help with CSP configuration.
+</Note>
+
+## How form data maps to lead fields
+
+When a visitor submits the form, the CRM creates a new lead record and populates it using the field mapping you configured. Standard field mappings include:
+
+| Form field | Lead record field |
+| --- | --- |
+| First name | First name |
+| Last name | Last name |
+| Work email | Email |
+| Company | Company |
+| Phone | Phone |
+| Message / inquiry | Notes |
+
+You can map any form field to any standard or [custom field](/settings/custom-fields) on the lead record. Fields that have no mapping are saved as raw submission data but do not populate the lead record automatically.
+
+### Duplicate handling
+
+If a submission comes in with an email address that already exists in your CRM, the system detects the duplicate and does not create a second lead record. Instead, it updates the existing record with the new submission data and logs the form submission as an activity on the timeline.
+
+## Manage form submissions
+
+Open any form and click the **Submissions** tab to see a log of every submission:
+
+- Submission date and time
+- The data submitted in each field
+- Whether a lead record was created or an existing record was updated
+- The lead record linked to the submission
+
+You can click through to the lead record directly from the submission log.
+
+<Tip>
+  Set up an [email sequence](/engage/email-sequences) to enroll new leads automatically after a form submission. This way, every inquiry gets a prompt, consistent follow-up without any manual work.
+</Tip>
+
+## Edit or deactivate a form
+
+To change a form's fields or settings:
+
+1. Open the form from the **FormsIQ** list.
+2. Click **Edit**.
+3. Make your changes and click **Save**.
+
+<Warning>
+  Removing a required field or changing a field mapping on an active form affects all future submissions. It does not change how past submissions were recorded.
+</Warning>
+
+To stop accepting submissions without deleting the form, toggle it to **Inactive**. Inactive forms show an error page if someone tries to access the hosted URL.
+
+## Best practices
+
+- **Ask only for what you need.** Fewer fields means higher completion rates. Start with name, email, and company — you can collect more information later.
+- **Always map the email field.** Email is how the CRM identifies and deduplicates leads. A form without an email field will create leads that are hard to engage or deduplicate.
+- **Set a default lead owner.** Unassigned leads often go unworked. Assign new form submissions to a specific rep or a round-robin rotation.
+- **Test before you publish.** Submit the form yourself after embedding it to confirm the lead record is created with the correct data in the correct fields.
+- **Connect new leads to sequences.** High-intent form submissions — like demo requests — benefit from immediate, automated follow-up via an [email sequence](/engage/email-sequences).
+
+## Related
+
+- [Leads](/records/leads) — View and manage leads created from form submissions.
+- [Email Sequences](/engage/email-sequences) — Automatically follow up with leads who submit a form.
+- [Custom Fields](/settings/custom-fields) — Create additional lead fields to map form data into.

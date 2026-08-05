@@ -1,0 +1,76 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Thread CRM",
+  "theme": "mint",
+  "colors": {
+    "primary": "#6729ff",
+    "light": "#EFF6FF",
+    "dark": "#1E3A5F"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/b2bleadsmarket"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book-open-cover",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Records",
+            "pages": [
+              "records/contacts",
+              "records/companies",
+              "records/leads",
+              "records/deals",
+              "records/tasks",
+              "records/notes"
+            ]
+          },
+          {
+            "group": "Engage",
+            "pages": [
+              "engage/email-sequences",
+              "engage/email-templates",
+              "engage/call-logs",
+              "engage/forms-iq"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/workspace",
+              "settings/members-roles",
+              "settings/custom-fields",
+              "settings/email-setup",
+              "settings/api-keys"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "openapi": {
+          "source": "openapi.json",
+          "directory": "api-reference"
+        }
+      }
+    ]
+  },
+  "favicon": "/images/logo.png",
+  "logo": "/images/logo-full.png",
+  "api": {
+    "openapi": "/openapi.json"
+  }
+}

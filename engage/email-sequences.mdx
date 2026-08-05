@@ -1,0 +1,121 @@
+---
+title: "Email Sequences"
+description: "Automate multi-step email campaigns to nurture leads and contacts through your sales pipeline."
+---
+
+Email sequences let you send a series of automated emails to leads or contacts on a defined schedule. Instead of manually following up one by one, you configure the steps once and the CRM sends each email at the right time — stopping automatically when a recipient replies, converts, or is removed.
+
+Use sequences to run outbound prospecting campaigns, onboarding drips, re-engagement flows, or any repeatable outreach you'd otherwise do by hand.
+
+## How sequences work
+
+A sequence is made up of one or more steps. Each step specifies an email (written directly or pulled from a [template](/engage/email-templates)), a delay before sending, and optional conditions that control whether the step executes. Once a lead or contact is enrolled:
+
+- The CRM sends each step according to the schedule you set.
+- If the recipient replies, the sequence pauses automatically.
+- If the recipient converts (e.g., a lead becomes a deal), the sequence stops.
+- You can remove someone from a sequence at any time.
+
+## Create and launch a sequence
+
+<Steps>
+  <Step title="Open Email Sequences">
+    In the left sidebar, navigate to **Engage → Email Sequences**. Click **Create Sequence**.
+  </Step>
+  <Step title="Name your sequence">
+    Give the sequence a descriptive name (for example, "Outbound Prospecting — Q3" or "Trial Nurture"). This name is internal only.
+  </Step>
+  <Step title="Add your first step">
+    Click **Add Step**. Choose a delay (for example, "Send immediately" or "Wait 2 days"), then write your email subject and body — or select an existing [email template](/engage/email-templates).
+  </Step>
+  <Step title="Add follow-up steps">
+    Repeat the process for each follow-up email. Most sequences have 3–6 steps spaced a few days apart. Each step inherits the same personalization fields available in the first step.
+  </Step>
+  <Step title="Configure sequence settings">
+    Set the sending window (days and hours when emails go out), the sender name and address, and whether to stop the sequence on reply or conversion. Make sure your sending account is connected under [Settings → Email Setup](/settings/email-setup).
+  </Step>
+  <Step title="Save and activate">
+    Click **Save**, then toggle the sequence to **Active**. Inactive sequences won't send even if leads are enrolled.
+  </Step>
+  <Step title="Enroll leads or contacts">
+    Go to a [lead record](/records/leads) or contact record. Click **Add to Sequence** and select your sequence. The CRM schedules the first step immediately (or after the configured delay).
+  </Step>
+</Steps>
+
+## Add leads to a sequence in bulk
+
+You can enroll multiple leads at once from the Leads list view:
+
+1. Navigate to **Records → Leads**.
+2. Filter or search to narrow the list.
+3. Select the checkboxes next to the leads you want to enroll.
+4. Click **Actions → Add to Sequence** and choose a sequence.
+
+<Note>
+  Only leads with a valid email address can be enrolled. The CRM skips any selected lead that is missing an email or is already active in the same sequence.
+</Note>
+
+## Personalize with dynamic fields
+
+Use dynamic fields in your subject lines and email body to insert lead- or contact-specific data automatically. Wrap field names in double curly braces:
+
+| Field | Inserts |
+|---|---|
+| `{{first_name}}` | Recipient's first name |
+| `{{last_name}}` | Recipient's last name |
+| `{{company}}` | Company name |
+| `{{job_title}}` | Job title |
+| `{{sender_name}}` | Your name (the enrolled sender) |
+
+If a field has no value for a given recipient, the CRM leaves it blank by default. Set fallback text in your template to handle missing data gracefully — for example, `{{first_name | "there"}}` outputs "there" when no first name is on file.
+
+<Tip>
+  Personalization beyond a first name — like referencing the recipient's industry or a recent company announcement — significantly improves reply rates. Keep each email short and focused on a single call to action.
+</Tip>
+
+## Track sequence performance
+
+Open any sequence and click the **Analytics** tab to see performance data:
+
+<CardGroup cols={3}>
+  <Card title="Open rate" icon="envelope-open">
+    Percentage of sent emails that were opened at least once.
+  </Card>
+  <Card title="Reply rate" icon="reply">
+    Percentage of recipients who replied to any step in the sequence.
+  </Card>
+  <Card title="Click-through rate" icon="cursor-arrow-rays">
+    Percentage of recipients who clicked a tracked link in an email.
+  </Card>
+</CardGroup>
+
+You can also view per-step stats to see which emails in your sequence perform best and where recipients drop off.
+
+Individual engagement events (opens, clicks, replies) appear on the activity timeline of each lead or contact record.
+
+## Manage active sequences
+
+From the **Email Sequences** list, you can:
+
+- **Pause** a sequence — no new emails go out, but enrolled recipients retain their place and resume when you reactivate.
+- **Edit steps** — changes to steps affect only recipients who haven't reached that step yet.
+- **Clone a sequence** — useful for A/B testing different messaging.
+- **Remove a recipient** — open the sequence, go to **Enrolled**, find the person, and click **Remove**.
+
+<Warning>
+  Editing a step's delay or content while a sequence is active affects future sends only. Emails already scheduled to go out in the next few minutes may not reflect your edits.
+</Warning>
+
+## Best practices
+
+- **Match sequence length to deal complexity.** A short 3-step sequence works well for high-volume prospecting; a longer nurture flow makes sense for complex enterprise deals.
+- **Space steps realistically.** Give recipients 2–4 business days between follow-ups. Sending too frequently leads to unsubscribes.
+- **Use templates for consistency.** Storing your best-performing emails as [templates](/engage/email-templates) makes it easy to reuse and refine them across sequences.
+- **Always set a sending window.** Restrict sends to business hours in your recipients' time zones to improve open rates.
+- **Monitor and iterate.** Review open and reply rates after each campaign and adjust subject lines, timing, or copy accordingly.
+
+## Related
+
+- [Email Templates](/engage/email-templates) — Create reusable email content for your sequences.
+- [Leads](/records/leads) — Enroll leads directly from their record.
+- [Email Setup](/settings/email-setup) — Connect your sending account before launching sequences.

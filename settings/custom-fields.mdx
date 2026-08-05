@@ -1,0 +1,100 @@
+---
+title: "Custom Fields"
+description: "Extend your CRM by adding custom data fields to Contacts, Companies, Leads, and Deals."
+---
+
+Custom fields let you capture unique information that matters to your business beyond the default CRM fields. You can add custom fields to Contacts, Companies, Leads, and Deals.
+
+Access from: **Settings → Workspace → Custom Fields**
+
+## Supported modules
+
+The overview page lists all modules that support custom fields:
+
+- **Contacts**
+- **Companies**
+- **Leads**
+- **Deals**
+
+Each row shows how many custom fields currently exist for that module. Click a module to manage its custom fields.
+
+## Creating a custom field
+
+When you select a module (for example, Contacts), you see a list of all custom fields created for that module. If none exist yet, the page shows a **No Custom Fields** message.
+
+<Steps>
+  <Step title="Navigate to the module">
+    Go to **Settings → Workspace → Custom Fields** and click the module you want to add a field to (Contacts, Companies, Leads, or Deals).
+  </Step>
+  <Step title="Click + Create Custom Field">
+    A modal opens where you can define the field.
+  </Step>
+  <Step title="Fill in the field details">
+    Complete the following form fields:
+
+    - **Label** *(required)* — A human-friendly name for the field, such as "Company Size", "Industry Type", "Lead Source", or "Budget Estimate".
+    - **Field name** *(auto-generated)* — Automatically created from the label. This is used as the internal API key of the field.
+    - **Field type** — Choose how the data is stored and displayed (see field types below).
+    - **Description** *(optional)* — Add a helpful explanation for your team about the purpose of the field.
+  </Step>
+  <Step title="Click Create">
+    The field is saved and appears in the module's custom fields list.
+  </Step>
+</Steps>
+
+## Field types
+
+<AccordionGroup>
+  <Accordion title="Text">
+    General-purpose text input. Use for short freeform values such as "Favorite Product" or "Referred By".
+  </Accordion>
+  <Accordion title="Number">
+    For numerical inputs such as "Employee Count" or "Number of Locations".
+  </Accordion>
+  <Accordion title="Date">
+    For selecting a calendar date. Use for values like "Contract Renewal Date" or "First Contact Date".
+  </Accordion>
+  <Accordion title="Boolean">
+    A checkbox for Yes/No values. Use for flags like "Has Signed NDA" or "Opted In".
+  </Accordion>
+  <Accordion title="Textarea">
+    Long-form text input. Use for fields like "Additional Notes" or "Background Information".
+  </Accordion>
+  <Accordion title="URL">
+    Website links. Use for values like "Company Website" or "LinkedIn Profile".
+  </Accordion>
+  <Accordion title="Array">
+    Stores multiple values. Use for tags or multi-value options such as "Product Interests".
+  </Accordion>
+  <Accordion title="Dropdown">
+    A select field with a predefined set of values. Use for standardized options like "Region" or "Contract Type".
+  </Accordion>
+  <Accordion title="Email">
+    A specialized email input with format validation.
+  </Accordion>
+  <Accordion title="Phone">
+    A specialized phone number input with format validation.
+  </Accordion>
+  <Accordion title="Currency">
+    A monetary value input with currency formatting. Use for fields like "Budget Estimate" or "Deal Value".
+  </Accordion>
+</AccordionGroup>
+
+## Editing and deleting custom fields
+
+After creating fields, you can edit or delete them from the module's custom fields list.
+
+- **Edit** — Update the label, field type, or description at any time.
+- **Delete** — Permanently removes the field and all data stored in it.
+
+<Warning>
+  Deleting a custom field permanently removes all associated data. This action cannot be undone.
+</Warning>
+
+## Best practices
+
+- Use clear, descriptive labels so team members know exactly what to enter.
+- Avoid creating too many fields — keep CRM forms lightweight and focused.
+- Use **Dropdown** fields for standardized values (e.g., Industry, Region) to ensure consistent data.
+- Add field descriptions to help team members understand how to use each field correctly.
+- Periodically clean up unused custom fields to keep your CRM organized.
