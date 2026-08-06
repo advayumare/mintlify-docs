@@ -63,7 +63,7 @@
         "icon": "code",
         "openapi": {
           "source": "openapi.json",
-          "directory": "api-reference"
+          "directory": "./"
         }
       }
     ]
