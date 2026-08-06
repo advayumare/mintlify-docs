@@ -2,6 +2,9 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Thread CRM Documentation",
   "theme": "mint",
+  "fonts": {
+    "family": "Google Sans"
+  },
   "colors": {
     "primary": "#6729ff",
     "light": "#EFF6FF",
