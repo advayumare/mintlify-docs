@@ -71,6 +71,6 @@
   "favicon": "/images/logo.png",
   "logo": "/images/logo-full.png",
   "api": {
-    "openapi": "./openapi.json"
+    "openapi": "openapi.json"
   }
 }
