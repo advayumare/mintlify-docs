@@ -1,176 +1,9 @@
 {
   "openapi": "3.1.0",
   "paths": {
-    "/workspace-member": {
-      "get": {
-        "operationId": "WorkspaceMemberController_getAllWorkspaceMembers",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "tags": [
-          "Workspace Member"
-        ]
-      }
-    },
-    "/workspace-member/{userId}": {
-      "get": {
-        "operationId": "WorkspaceMemberController_getWorkspaceMember",
-        "parameters": [
-          {
-            "name": "userId",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "tags": [
-          "Workspace Member"
-        ]
-      },
-      "patch": {
-        "operationId": "WorkspaceMemberController_updateWorkspaceMember",
-        "parameters": [
-          {
-            "name": "userId",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateWorkspaceMemberDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "tags": [
-          "Workspace Member"
-        ]
-      },
-      "delete": {
-        "operationId": "WorkspaceMemberController_deleteWorkspaceMember",
-        "parameters": [
-          {
-            "name": "userId",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "tags": [
-          "Workspace Member"
-        ]
-      }
-    },
-    "/workspace-member/members/{workspaceId}": {
-      "get": {
-        "operationId": "WorkspaceMemberController_getWorkspaceMembersByWorkspaceId",
-        "parameters": [
-          {
-            "name": "workspaceId",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WorkspaceMemberOutput"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "tags": [
-          "Workspace Member"
-        ]
-      }
-    },
     "/api-keys": {
       "post": {
+        "summary": "Create a new API key",
         "operationId": "ApiKeysController_createApiKey",
         "parameters": [],
         "requestBody": {
@@ -198,6 +31,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -207,6 +43,7 @@
     },
     "/api-keys/workspace/{workspaceId}": {
       "get": {
+        "summary": "Get API keys by workspace ID",
         "operationId": "ApiKeysController_getApiKeysByWorkspace",
         "parameters": [
           {
@@ -236,6 +73,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -245,6 +85,7 @@
     },
     "/api-keys/member/{memberId}": {
       "get": {
+        "summary": "Get API keys by member ID",
         "operationId": "ApiKeysController_getApiKeysByMember",
         "parameters": [
           {
@@ -274,6 +115,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -283,6 +127,7 @@
     },
     "/api-keys/{id}": {
       "get": {
+        "summary": "Get an API key by ID",
         "operationId": "ApiKeysController_getApiKeyById",
         "parameters": [
           {
@@ -309,6 +154,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -316,6 +164,7 @@
         ]
       },
       "put": {
+        "summary": "Update an API key",
         "operationId": "ApiKeysController_updateApiKey",
         "parameters": [
           {
@@ -352,6 +201,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -361,6 +213,7 @@
     },
     "/api-keys/token/{token}": {
       "get": {
+        "summary": "Get an API key by token",
         "operationId": "ApiKeysController_getApiKeyByToken",
         "parameters": [
           {
@@ -387,6 +240,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -396,6 +252,7 @@
     },
     "/api-keys/{id}/status": {
       "patch": {
+        "summary": "Update the status of an API key",
         "operationId": "ApiKeysController_toggleApiKeyStatus",
         "parameters": [
           {
@@ -428,9 +285,11 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
-        "summary": "Update the status of an API key",
         "tags": [
           "API Keys"
         ]
@@ -438,6 +297,7 @@
     },
     "/api-keys/{id}/regenerate": {
       "patch": {
+        "summary": "Regenerate an API key",
         "operationId": "ApiKeysController_regenerateApiKey",
         "parameters": [
           {
@@ -473,6 +333,7 @@
     },
     "/api-keys/{id}/last-used": {
       "patch": {
+        "summary": "Update the last used at timestamp of an API key",
         "operationId": "ApiKeysController_updateLastUsedAt",
         "parameters": [
           {
@@ -492,6 +353,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -501,6 +365,7 @@
     },
     "/api-keys/decode": {
       "post": {
+        "summary": "Decode an API key token",
         "operationId": "ApiKeysController_decodeApiKeyToken",
         "parameters": [],
         "requestBody": {
@@ -528,6 +393,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -537,6 +405,7 @@
     },
     "/api-keys/{id}/soft-delete": {
       "patch": {
+        "summary": "Soft delete an API key",
         "operationId": "ApiKeysController_softDeleteApiKey",
         "parameters": [
           {
@@ -556,6 +425,9 @@
         "security": [
           {
             "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
           }
         ],
         "tags": [
@@ -563,8 +435,496 @@
         ]
       }
     },
+    "/person": {
+      "post": {
+        "summary": "Create a new person",
+        "operationId": "PersonController_createPerson",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePersonDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete people",
+        "operationId": "PersonController_deletePersons",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/all": {
+      "post": {
+        "summary": "Get all people",
+        "operationId": "PersonController_getAllPersons",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetPersonsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/person/{id}": {
+      "get": {
+        "summary": "Get a person by ID",
+        "operationId": "PersonController_getPersonById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/update/{id}": {
+      "patch": {
+        "summary": "Update a person by ID",
+        "operationId": "PersonController_updatePerson",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePersonDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/delete/{id}": {
+      "delete": {
+        "summary": "Delete a person by ID",
+        "operationId": "PersonController_deletePerson",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/upload-excel": {
+      "post": {
+        "summary": "Upload an Excel file",
+        "operationId": "PersonController_uploadExcel",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/soft": {
+      "delete": {
+        "summary": "Soft delete people",
+        "operationId": "PersonController_softDeletePersons",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/restore": {
+      "patch": {
+        "summary": "Restore people",
+        "operationId": "PersonController_restorePersons",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/import": {
+      "post": {
+        "summary": "Import people",
+        "operationId": "PersonController_importPersons",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/export": {
+      "get": {
+        "summary": "Generate Excel export",
+        "operationId": "PersonController_generateExcel",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/columns": {
+      "get": {
+        "summary": "Get person fields",
+        "operationId": "PersonController_getPersonEntityColumns",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonColumnsResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/get-name-and-id": {
+      "get": {
+        "summary": "Get person name and ID",
+        "operationId": "PersonController_getPersonNameAndId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/create-bulk": {
+      "post": {
+        "summary": "Create people in bulk",
+        "operationId": "PersonController_createBulkPersons",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonWorkspaceEntity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/person/check-permissions": {
+      "get": {
+        "summary": "Check people import permissions",
+        "operationId": "PersonController_checkImportPermissions",
+        "parameters": [
+          {
+            "name": "workspaceMemberId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Person"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
     "/company/check-permissions": {
       "get": {
+        "summary": "Check company import permissions",
         "operationId": "CompanyController_checkImportPermissions",
         "parameters": [
           {
@@ -583,11 +943,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/account-owner/{accountOwnerId}": {
       "get": {
+        "summary": "Get companies by account owner ID",
         "operationId": "CompanyController_getCompanies",
         "parameters": [
           {
@@ -613,11 +982,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/get-name-and-id": {
       "get": {
+        "summary": "Get company name and ID",
         "operationId": "CompanyController_getCompanyNameAndId",
         "parameters": [],
         "responses": {
@@ -627,11 +1005,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company": {
       "post": {
+        "summary": "Create a new company",
         "operationId": "CompanyController_createCompany",
         "parameters": [],
         "requestBody": {
@@ -658,9 +1045,18 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "delete": {
+        "summary": "Delete companies",
         "operationId": "CompanyController_deleteCompanies",
         "parameters": [],
         "responses": {
@@ -670,11 +1066,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/all": {
       "post": {
+        "summary": "Get all companies",
         "operationId": "CompanyController_getAllCompanies",
         "parameters": [],
         "requestBody": {
@@ -701,11 +1106,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/simple": {
       "get": {
+        "summary": "Get simple companies",
         "operationId": "CompanyController_getCompaniesSimple",
         "parameters": [],
         "responses": {
@@ -715,11 +1129,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/export": {
       "get": {
+        "summary": "Generate Excel export",
         "operationId": "CompanyController_generateExcel",
         "parameters": [],
         "responses": {
@@ -729,11 +1152,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/columns": {
       "get": {
+        "summary": "Get company fields",
         "operationId": "CompanyController_getCompanyEntityColumns",
         "parameters": [],
         "responses": {
@@ -755,6 +1187,7 @@
     },
     "/company/{id}": {
       "get": {
+        "summary": "Get a company by ID",
         "operationId": "CompanyController_getCompanyById",
         "parameters": [
           {
@@ -780,11 +1213,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/update/{id}": {
       "patch": {
+        "summary": "Update a company",
         "operationId": "CompanyController_updateCompany",
         "parameters": [
           {
@@ -820,11 +1262,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/delete/{id}": {
       "delete": {
+        "summary": "Delete a company by ID",
         "operationId": "CompanyController_deleteCompany",
         "parameters": [
           {
@@ -848,6 +1299,7 @@
     },
     "/company/upload-excel": {
       "post": {
+        "summary": "Upload an Excel file",
         "operationId": "CompanyController_uploadExcel",
         "parameters": [],
         "responses": {
@@ -864,11 +1316,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/soft": {
       "delete": {
+        "summary": "Soft delete companies",
         "operationId": "CompanyController_softDeleteCompanies",
         "parameters": [],
         "responses": {
@@ -878,11 +1339,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/restore": {
       "patch": {
+        "summary": "Restore companies",
         "operationId": "CompanyController_restoreCompanies",
         "parameters": [],
         "responses": {
@@ -892,11 +1362,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/import": {
       "post": {
+        "summary": "Import companies",
         "operationId": "CompanyController_importCompanies",
         "parameters": [],
         "requestBody": {
@@ -919,11 +1398,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/company/create-bulk": {
       "post": {
+        "summary": "Create companies in bulk",
         "operationId": "CompanyController_createBulkCompanies",
         "parameters": [],
         "requestBody": {
@@ -946,11 +1434,20 @@
         },
         "tags": [
           "Company"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead": {
       "post": {
+        "summary": "Create a new lead",
         "operationId": "LeadController_createLead",
         "parameters": [],
         "requestBody": {
@@ -977,9 +1474,18 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "delete": {
+        "summary": "Delete leads",
         "operationId": "LeadController_deleteLeads",
         "parameters": [],
         "responses": {
@@ -989,11 +1495,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/get-name-and-id": {
       "get": {
+        "summary": "Get lead name and ID",
         "operationId": "LeadController_getLeadNameAndId",
         "parameters": [],
         "responses": {
@@ -1003,11 +1518,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/{id}": {
       "put": {
+        "summary": "Update a lead",
         "operationId": "LeadController_updateLead",
         "parameters": [
           {
@@ -1043,11 +1567,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/{id}/update-with-person": {
       "patch": {
+        "summary": "Update a lead with a person",
         "operationId": "LeadController_updateLeadWithPerson",
         "parameters": [
           {
@@ -1083,11 +1616,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/lead/{id}": {
       "get": {
+        "summary": "Get a lead by ID",
         "operationId": "LeadController_getLeadById",
         "parameters": [
           {
@@ -1113,11 +1655,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/delete/{id}": {
       "delete": {
+        "summary": "Delete a lead by ID",
         "operationId": "LeadController_deleteLead",
         "parameters": [
           {
@@ -1136,11 +1687,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/all": {
       "post": {
+        "summary": "Get all leads",
         "operationId": "LeadController_getAllLeads",
         "parameters": [],
         "requestBody": {
@@ -1167,11 +1727,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/import": {
       "post": {
+        "summary": "Import leads",
         "operationId": "LeadController_importLeads",
         "parameters": [],
         "requestBody": {
@@ -1194,11 +1763,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/soft": {
       "delete": {
+        "summary": "Soft delete leads",
         "operationId": "LeadController_softDeleteLeads",
         "parameters": [],
         "responses": {
@@ -1208,11 +1786,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/restore": {
       "patch": {
+        "summary": "Restore leads",
         "operationId": "LeadController_restoreLeads",
         "parameters": [],
         "responses": {
@@ -1222,11 +1809,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/export": {
       "get": {
+        "summary": "Generate Excel export",
         "operationId": "LeadController_generateExcel",
         "parameters": [],
         "responses": {
@@ -1236,11 +1832,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/columns": {
       "get": {
+        "summary": "Get lead fields",
         "operationId": "LeadController_getLeadEntityColumns",
         "parameters": [],
         "responses": {
@@ -1257,11 +1862,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/persons-to-leads": {
       "post": {
+        "summary": "Convert people to leads",
         "operationId": "LeadController_convertPersonsToLeads",
         "parameters": [],
         "requestBody": {
@@ -1291,11 +1905,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/leads-bulk": {
       "post": {
+        "summary": "Create leads in bulk",
         "operationId": "LeadController_createLeadsBulk",
         "parameters": [],
         "requestBody": {
@@ -1328,11 +1951,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/lead/check-permissions": {
       "get": {
+        "summary": "Check lead import permissions",
         "operationId": "LeadController_checkImportPermissions",
         "parameters": [
           {
@@ -1351,11 +1983,20 @@
         },
         "tags": [
           "Lead"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note": {
       "post": {
+        "summary": "Create a new note",
         "operationId": "NoteController_createNote",
         "parameters": [],
         "requestBody": {
@@ -1382,11 +2023,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note/all": {
       "get": {
+        "summary": "Get all notes",
         "operationId": "NoteController_getAllNotes",
         "parameters": [
           {
@@ -1439,11 +2089,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note/{id}": {
       "get": {
+        "summary": "Get a note by ID",
         "operationId": "NoteController_getNoteById",
         "parameters": [
           {
@@ -1469,9 +2128,18 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "patch": {
+        "summary": "Update a note by ID",
         "operationId": "NoteController_updateNote",
         "parameters": [
           {
@@ -1507,9 +2175,18 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "delete": {
+        "summary": "Delete a note by ID",
         "operationId": "NoteController_deleteNote",
         "parameters": [
           {
@@ -1528,11 +2205,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note/soft-delete": {
       "post": {
+        "summary": "Soft delete notes",
         "operationId": "NoteController_softDeleteNotes",
         "parameters": [],
         "responses": {
@@ -1542,11 +2228,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note/target": {
       "post": {
+        "summary": "Create a new note target",
         "operationId": "NoteController_createNoteTarget",
         "parameters": [],
         "requestBody": {
@@ -1576,11 +2271,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/note/get-notes-by-target": {
       "post": {
+        "summary": "Get note target",
         "operationId": "NoteController_getNoteTarget",
         "parameters": [],
         "requestBody": {
@@ -1607,11 +2311,20 @@
         },
         "tags": [
           "Note"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task": {
       "post": {
+        "summary": "Create a new task",
         "operationId": "TaskController_createTask",
         "parameters": [],
         "requestBody": {
@@ -1638,11 +2351,20 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task/all": {
       "get": {
+        "summary": "Get all tasks",
         "operationId": "TaskController_getAllTasks",
         "parameters": [
           {
@@ -1792,6 +2514,7 @@
     },
     "/task/by-assignee": {
       "post": {
+        "summary": "Get tasks by assignee",
         "operationId": "TaskController_getTasksByAssignee",
         "parameters": [],
         "responses": {
@@ -1801,11 +2524,20 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task/{id}": {
       "get": {
+        "summary": "Get a task by ID",
         "operationId": "TaskController_getTaskById",
         "parameters": [
           {
@@ -1831,9 +2563,18 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "patch": {
+        "summary": "Update a task by ID",
         "operationId": "TaskController_updateTask",
         "parameters": [
           {
@@ -1869,9 +2610,18 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       },
       "delete": {
+        "summary": "Delete a task by ID",
         "operationId": "TaskController_deleteTask",
         "parameters": [
           {
@@ -1890,11 +2640,20 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task/soft": {
       "post": {
+        "summary": "Soft delete tasks",
         "operationId": "TaskController_softDeleteTasks",
         "parameters": [],
         "responses": {
@@ -1904,11 +2663,20 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task/target": {
       "post": {
+        "summary": "Create a new task target",
         "operationId": "TaskController_createTaskTarget",
         "parameters": [],
         "requestBody": {
@@ -1938,11 +2706,20 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
     "/task/get-tasks-by-target": {
       "post": {
+        "summary": "Get tasks by target",
         "operationId": "TaskController_getTaskByTarget",
         "parameters": [],
         "requestBody": {
@@ -1969,182 +2746,24 @@
         },
         "tags": [
           "Task"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
         ]
       }
     },
-    "/person": {
-      "post": {
-        "operationId": "PersonController_createPerson",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePersonDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonDto"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      },
-      "delete": {
-        "operationId": "PersonController_deletePersons",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/all": {
-      "post": {
-        "operationId": "PersonController_getAllPersons",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetPersonsDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonResponse"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/person/{id}": {
+    "/workspace-member": {
       "get": {
-        "operationId": "PersonController_getPersonById",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonDto"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/update/{id}": {
-      "patch": {
-        "operationId": "PersonController_updatePerson",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatePersonDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonDto"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/delete/{id}": {
-      "delete": {
-        "operationId": "PersonController_deletePerson",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/upload-excel": {
-      "post": {
-        "operationId": "PersonController_uploadExcel",
+        "summary": "Get all workspace members",
+        "operationId": "WorkspaceMemberController_getAllWorkspaceMembers",
         "parameters": [],
         "responses": {
-          "201": {
+          "200": {
             "description": "",
             "content": {
               "application/json": {
@@ -2155,160 +2774,112 @@
             }
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "tags": [
-          "Person"
+          "Workspace Member"
         ]
       }
     },
-    "/person/soft": {
-      "delete": {
-        "operationId": "PersonController_softDeletePersons",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/restore": {
-      "patch": {
-        "operationId": "PersonController_restorePersons",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/import": {
-      "post": {
-        "operationId": "PersonController_importPersons",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/export": {
+    "/workspace-member/{userId}": {
       "get": {
-        "operationId": "PersonController_generateExcel",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/columns": {
-      "get": {
-        "operationId": "PersonController_getPersonEntityColumns",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonColumnsResponse"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/get-name-and-id": {
-      "get": {
-        "operationId": "PersonController_getPersonNameAndId",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/create-bulk": {
-      "post": {
-        "operationId": "PersonController_createBulkPersons",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PersonWorkspaceEntity"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Person"
-        ]
-      }
-    },
-    "/person/check-permissions": {
-      "get": {
-        "operationId": "PersonController_checkImportPermissions",
+        "summary": "Get a workspace member by user ID",
+        "operationId": "WorkspaceMemberController_getWorkspaceMember",
         "parameters": [
           {
-            "name": "workspaceMemberId",
+            "name": "userId",
             "required": true,
-            "in": "query",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "Workspace Member"
+        ]
+      },
+      "patch": {
+        "summary": "Update a workspace member by user ID",
+        "operationId": "WorkspaceMemberController_updateWorkspaceMember",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWorkspaceMemberDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "Workspace Member"
+        ]
+      },
+      "delete": {
+        "summary": "Delete a workspace member by user ID",
+        "operationId": "WorkspaceMemberController_deleteWorkspaceMember",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
             "schema": {
               "type": "string"
             }
@@ -2319,8 +2890,58 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "tags": [
-          "Person"
+          "Workspace Member"
+        ]
+      }
+    },
+    "/workspace-member/members/{workspaceId}": {
+      "get": {
+        "summary": "Get workspace members by workspace ID",
+        "operationId": "WorkspaceMemberController_getWorkspaceMembersByWorkspaceId",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WorkspaceMemberOutput"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          },
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "tags": [
+          "Workspace Member"
         ]
       }
     }
@@ -2334,7 +2955,12 @@
   "tags": [],
   "servers": [
     {
-      "url": "http://app.threadcrm.ai/"
+      "description": "Production Server",
+      "url": "http://api.threadcrm.ai/"
+    },
+    {
+      "description": "QA Server",
+      "url": "http://thread.katdev.com/api/"
     }
   ],
   "components": {
@@ -2344,6 +2970,11 @@
         "bearerFormat": "JWT",
         "description": "Default JWT Authorization",
         "type": "http"
+      },
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-KEY",
+        "in": "header"
       }
     },
     "schemas": {
@@ -5886,7 +6517,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         },
         "required": [
           "name",
@@ -6218,7 +6849,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         }
       },
       "NameDto": {
@@ -6366,7 +6997,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         },
         "required": [
           "salutation",
@@ -6676,7 +7307,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         }
       },
       "UpdateLeadWithPersonDto": {
@@ -7589,7 +8220,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         }
       },
       "PersonDto": {
@@ -7907,7 +8538,7 @@
           },
           "customFields": {
             "$ref": "#/components/schemas/CustomFieldsDto"
-          },
+          }
         },
         "required": [
           "emails"
@@ -10372,440 +11003,6 @@
           "createdByWorkspaceMemberId": {
             "type": "string"
           },
-          "createdByName": {
-            "type": "string"
-          },
-          "assignedToId": {
-            "type": "string"
-          },
-          "settings": {
-            "type": "object",
-            "properties": {
-              "sendOnWeekdays": {
-                "type": "boolean"
-              },
-              "sendTimezone": {
-                "type": "string"
-              },
-              "sendTimeStart": {
-                "type": "string"
-              },
-              "sendTimeEnd": {
-                "type": "string"
-              },
-              "excludeReplied": {
-                "type": "boolean"
-              },
-              "excludeUnsubscribed": {
-                "type": "boolean"
-              }
-            },
-            "required": []
-          },
-          "startDate": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "endDate": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "totalContacts": {
-            "type": "number"
-          },
-          "completedContacts": {
-            "type": "number"
-          },
-          "activeContacts": {
-            "type": "number"
-          },
-          "pausedContacts": {
-            "type": "number"
-          },
-          "steps": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmailSequenceStepWorkspaceEntity"
-            }
-          },
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmailSequenceContactWorkspaceEntity"
-            }
-          },
-          "assignee": {
-            "$ref": "#/components/schemas/WorkspaceMemberWorkspaceEntity"
-          },
-          "id": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "string"
-          },
-          "deletedAt": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "name",
-          "description",
-          "status",
-          "createdBySource",
-          "createdByWorkspaceMemberId",
-          "createdByName",
-          "assignedToId",
-          "settings",
-          "startDate",
-          "endDate",
-          "totalContacts",
-          "completedContacts",
-          "activeContacts",
-          "pausedContacts",
-          "steps",
-          "contacts",
-          "assignee",
-          "id",
-          "createdAt",
-          "updatedAt",
-          "deletedAt"
-        ]
-      },
-      "EmailSequenceStepWorkspaceEntity": {
-        "type": "object",
-        "properties": {
-          "sequenceId": {
-            "type": "string"
-          },
-          "sequence": {
-            "$ref": "#/components/schemas/EmailSequenceWorkspaceEntity"
-          },
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "enum": [
-              "EMAIL",
-              "DELAY",
-              "CONDITION",
-              "TASK"
-            ],
-            "type": "string"
-          },
-          "order": {
-            "type": "number"
-          },
-          "delayValue": {
-            "type": "number"
-          },
-          "delayType": {
-            "enum": [
-              "MINUTES",
-              "HOURS",
-              "DAYS",
-              "WEEKS"
-            ],
-            "type": "string"
-          },
-          "emailSubject": {
-            "type": "string"
-          },
-          "emailBody": {
-            "type": "string"
-          },
-          "emailBodyHtml": {
-            "type": "string"
-          },
-          "emailTemplateId": {
-            "type": "string"
-          },
-          "createdBySource": {
-            "type": "string"
-          },
-          "createdByWorkspaceMemberId": {
-            "type": "string"
-          },
-          "createdByName": {
-            "type": "string"
-          },
-          "conditions": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "field": {
-                  "type": "string"
-                },
-                "operator": {
-                  "type": "string"
-                },
-                "value": {
-                  "type": "object"
-                }
-              },
-              "required": []
-            }
-          },
-          "settings": {
-            "type": "object",
-            "properties": {
-              "sendOnWeekdays": {
-                "type": "boolean"
-              },
-              "sendTime": {
-                "type": "string"
-              },
-              "trackOpens": {
-                "type": "boolean"
-              },
-              "trackClicks": {
-                "type": "boolean"
-              },
-              "followUpOnReply": {
-                "type": "boolean"
-              }
-            },
-            "required": []
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "description": {
-            "type": "string"
-          },
-          "activities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmailSequenceContactActivityWorkspaceEntity"
-            }
-          },
-          "id": {
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string"
-          },
-          "updatedAt": {
-            "type": "string"
-          },
-          "deletedAt": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "sequenceId",
-          "sequence",
-          "name",
-          "type",
-          "order",
-          "delayValue",
-          "delayType",
-          "emailSubject",
-          "emailBody",
-          "emailBodyHtml",
-          "emailTemplateId",
-          "createdBySource",
-          "createdByWorkspaceMemberId",
-          "createdByName",
-          "conditions",
-          "settings",
-          "isActive",
-          "description",
-          "activities",
-          "id",
-          "createdAt",
-          "updatedAt",
-          "deletedAt"
-        ]
-      },
-      "UpdateEmailSequenceDto": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "DRAFT",
-              "ACTIVE",
-              "PAUSED",
-              "COMPLETED",
-              "ARCHIVED"
-            ]
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "assignedToId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "settings": {
-            "$ref": "#/components/schemas/EmailSequenceSettingsDto"
-          },
-          "startDate": {
-            "type": "string"
-          },
-          "endDate": {
-            "type": "string"
-          },
-          "steps": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateEmailSequenceStepDto"
-            }
-          },
-          "totalContacts": {
-            "type": "number"
-          },
-          "completedContacts": {
-            "type": "number"
-          },
-          "activeContacts": {
-            "type": "number"
-          },
-          "pausedContacts": {
-            "type": "number"
-          }
-        }
-      },
-      "BulkDeleteSequencesDto": {
-        "type": "object",
-        "properties": {
-          "sequenceIds": {
-            "minItems": 1,
-            "maxItems": 100,
-            "description": "Array of email sequence IDs to delete",
-            "example": [
-              "uuid-1",
-              "uuid-2",
-              "uuid-3"
-            ],
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "sequenceIds"
-        ]
-      },
-      "EmailSequenceContactDto": {
-        "type": "object",
-        "properties": {
-          "personId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "leadId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "email": {
-            "type": "string",
-            "format": "email"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "customFields": {
-            "type": "object"
-          }
-        },
-        "required": [
-          "email"
-        ]
-      },
-      "AddContactsToSequenceDto": {
-        "type": "object",
-        "properties": {
-          "contacts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EmailSequenceContactDto"
-            }
-          },
-          "createdByWorkspaceMemberId": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "contacts"
-        ]
-      },
-      "RemoveContactsFromSequenceDto": {
-        "type": "object",
-        "properties": {
-          "contactIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        },
-        "required": [
-          "contactIds"
-        ]
-      },
-      "SoftDeleteContactsDto": {
-        "type": "object",
-        "properties": {
-          "contactIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "reason": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "contactIds"
-        ]
-      },
-      "RestoreContactsDto": {
-        "type": "object",
-        "properties": {
-          "contactIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "reason": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "contactIds"
-        ]
-      },
-      "UpdateSequenceContactDto": {
-        "type": "object",
-        "properties": {
-          "pauseReason": {
-            "type": "string"
-          },
-          "customFields": {
-            "type": "object"
-          }
-        }
-      }
-    }
-  }
-}      },
           "createdByName": {
             "type": "string"
           },

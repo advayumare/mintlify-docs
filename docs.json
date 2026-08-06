@@ -1,16 +1,17 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Thread CRM",
+  "name": "Thread CRM Documentation",
   "theme": "mint",
   "colors": {
     "primary": "#6729ff",
     "light": "#EFF6FF",
-    "dark": "#1E3A5F"
+    "dark": "#6729ff"
   },
   "navbar": {
     "primary": {
-      "type": "github",
-      "href": "https://github.com/b2bleadsmarket"
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.threadcrm.ai/"
     }
   },
   "navigation": {
@@ -64,12 +65,142 @@
         "openapi": {
           "source": "openapi.json",
           "directory": "api-reference"
-        }
+        },
+        "pages": [
+          {
+            "group": "Platform",
+            "pages": [
+              {
+                "group": "API Keys",
+                "pages": [
+                  "api-reference/api-keys/create-a-new-api-key",
+                  "api-reference/api-keys/get-api-keys-by-workspace-id",
+                  "api-reference/api-keys/get-api-keys-by-member-id",
+                  "api-reference/api-keys/get-an-api-key-by-id",
+                  "api-reference/api-keys/update-an-api-key",
+                  "api-reference/api-keys/update-the-status-of-an-api-key",
+                  "api-reference/api-keys/regenerate-an-api-key",
+                  "api-reference/api-keys/update-the-last-used-at-timestamp-of-an-api-key",
+                  "api-reference/api-keys/soft-delete-an-api-key"
+                ]
+              },
+              {
+                "group": "Workspace Members",
+                "pages": [
+                  "api-reference/workspace-member/get-all-workspace-members",
+                  "api-reference/workspace-member/get-a-workspace-member-by-user-id",
+                  "api-reference/workspace-member/get-workspace-members-by-workspace-id",
+                  "api-reference/workspace-member/update-a-workspace-member-by-user-id",
+                  "api-reference/workspace-member/delete-a-workspace-member-by-user-id"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Objects",
+            "pages": [
+              {
+                "group":"Person",
+                "pages": [
+                  "api-reference/person/create-a-new-person",
+                  "api-reference/person/import-people",
+                  "api-reference/person/upload-an-excel-file",
+                  "api-reference/person/create-people-in-bulk",
+                  "api-reference/person/get-all-people",
+                  "api-reference/person/get-a-person-by-id",
+                  "api-reference/person/get-person-fields",
+                  "api-reference/person/get-person-name-and-id",
+                  "api-reference/person/check-people-import-permissions",
+                  "api-reference/person/generate-excel-export",
+                  "api-reference/person/update-a-person-by-id",
+                  "api-reference/person/restore-people",
+                  "api-reference/person/delete-a-person-by-id",
+                  "api-reference/person/soft-delete-people",
+                  "api-reference/person/delete-people"
+                ]
+              },
+              {
+                "group":"Company",
+                "pages": [
+                  "api-reference/company/create-a-new-company",
+                  "api-reference/company/import-companies",
+                  "api-reference/company/upload-an-excel-file",
+                  "api-reference/company/create-companies-in-bulk",
+                  "api-reference/company/get-all-companies",
+                  "api-reference/company/get-a-company-by-id",
+                  "api-reference/company/get-company-fields",
+                  "api-reference/company/get-company-name-and-id",
+                  "api-reference/company/get-simple-companies",
+                  "api-reference/company/get-companies-by-account-owner-id",
+                  "api-reference/company/check-company-import-permissions",
+                  "api-reference/company/generate-excel-export",
+                  "api-reference/company/update-a-company",
+                  "api-reference/company/restore-companies",
+                  "api-reference/company/delete-companies",
+                  "api-reference/company/delete-a-company-by-id",
+                  "api-reference/company/soft-delete-companies"
+                ]
+              },
+              {
+                "group":"Lead",
+                "pages": [
+                  "api-reference/lead/create-a-new-lead",
+                  "api-reference/lead/get-all-leads",
+                  "api-reference/lead/import-leads",
+                  "api-reference/lead/convert-people-to-leads",
+                  "api-reference/lead/create-leads-in-bulk",
+                  "api-reference/lead/get-a-lead-by-id",
+                  "api-reference/lead/get-lead-name-and-id",
+                  "api-reference/lead/check-lead-import-permissions",
+                  "api-reference/lead/generate-excel-export",
+                  "api-reference/lead/get-lead-fields",
+                  "api-reference/lead/update-a-lead",
+                  "api-reference/lead/update-a-lead-with-a-person",
+                  "api-reference/lead/restore-leads",
+                  "api-reference/lead/delete-a-lead-by-id",
+                  "api-reference/lead/soft-delete-leads",
+                  "api-reference/lead/delete-leads"
+                ]
+              },
+              {
+                "group":"Task",
+                "pages": [
+                  "api-reference/task/create-a-new-task",
+                  "api-reference/task/create-a-new-task-target",
+                  "api-reference/task/get-tasks-by-assignee",
+                  "api-reference/task/get-tasks-by-target",
+                  "api-reference/task/soft-delete-tasks",
+                  "api-reference/task/get-all-tasks",
+                  "api-reference/task/get-a-task-by-id",
+                  "api-reference/task/update-a-task-by-id",
+                  "api-reference/task/delete-a-task-by-id"
+                ]
+              },  
+              {
+                "group":"Note",
+                "pages": [
+                  "api-reference/note/create-a-new-note",
+                  "api-reference/note/create-a-new-note-target",
+                  "api-reference/note/get-note-target",
+                  "api-reference/note/soft-delete-notes",
+                  "api-reference/note/get-all-notes",
+                  "api-reference/note/get-a-note-by-id",
+                  "api-reference/note/update-a-note-by-id",
+                  "api-reference/note/delete-a-note-by-id"
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "favicon": "/images/logo.png",
-  "logo": "/images/logo-full.png",
+  "logo": {
+    "light": "/images/logo-light.png",
+    "dark": "/images/logo-dark.png",
+    "href": "https://threadcrm.ai"
+  },
   "api": {
     "openapi": "openapi.json"
   }
