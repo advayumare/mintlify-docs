@@ -204,6 +204,13 @@
     "dark": "/images/logo-dark.png",
     "href": "https://threadcrm.ai"
   },
+  "background": {
+    "image": "/images/bg.png",
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#111111"
+    }
+  },
   "api": {
     "openapi": "openapi.json"
   }
