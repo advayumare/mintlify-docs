@@ -213,7 +213,7 @@
     "href": "https://threadcrm.ai"
   },
   "background": {
-    "image": "/images/background.png",
+    "image": "/images/background.avif",
     "color": {
       "light": "#FFFFFF",
       "dark": "#111111"
