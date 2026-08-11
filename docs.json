@@ -18,6 +18,9 @@
       }
     }
   },
+  "icons": {
+    "library": "tabler"
+  },
   "navbar": {
     "primary": {
       "type": "button",
@@ -35,13 +38,14 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart"
+              "quickstart",
+              "changelog"
             ]
           },
           {
             "group": "Records",
             "pages": [
-              "records/contacts",
+              "records/people",
               "records/companies",
               "records/leads",
               "records/deals",
@@ -80,9 +84,11 @@
         "pages": [
           {
             "group": "Platform",
+            "icon": "device-desktop",
             "pages": [
               {
                 "group": "API Keys",
+                "icon": "api",
                 "pages": [
                   "api-reference/api-keys/create-a-new-api-key",
                   "api-reference/api-keys/get-api-keys-by-workspace-id",
@@ -97,6 +103,7 @@
               },
               {
                 "group": "Workspace Members",
+                "icon": "users",
                 "pages": [
                   "api-reference/workspace-member/get-all-workspace-members",
                   "api-reference/workspace-member/get-a-workspace-member-by-user-id",
@@ -109,9 +116,11 @@
           },
           {
             "group": "Objects",
+            "icon": "cube",
             "pages": [
               {
                 "group":"Person",
+                "icon": "user",
                 "pages": [
                   "api-reference/person/create-a-new-person",
                   "api-reference/person/import-people",
@@ -132,6 +141,7 @@
               },
               {
                 "group":"Company",
+                "icon": "building-skyscraper",
                 "pages": [
                   "api-reference/company/create-a-new-company",
                   "api-reference/company/import-companies",
@@ -154,6 +164,7 @@
               },
               {
                 "group":"Lead",
+                "icon": "target-arrow",
                 "pages": [
                   "api-reference/lead/create-a-new-lead",
                   "api-reference/lead/get-all-leads",
@@ -175,6 +186,7 @@
               },
               {
                 "group":"Task",
+                "icon": "checkbox",
                 "pages": [
                   "api-reference/task/create-a-new-task",
                   "api-reference/task/create-a-new-task-target",
@@ -189,6 +201,7 @@
               },  
               {
                 "group":"Note",
+                "icon": "notes",
                 "pages": [
                   "api-reference/note/create-a-new-note",
                   "api-reference/note/create-a-new-note-target",
@@ -221,5 +234,9 @@
   },
   "api": {
     "openapi": "openapi.json"
+  },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"],
+    "display": "toc"
   }
 }

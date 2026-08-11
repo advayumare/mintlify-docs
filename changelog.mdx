@@ -1,0 +1,204 @@
+---
+title: "Changelog"
+description: "Product updates and announcements"
+icon: "list-check"
+---
+<Update label="July 2025" description="v1.0.3">
+# 1.0.12
+--------------------------
+### Bugfixes:
+-------------
+- Fix admin panel workspace members and user role enrichment
+- Fixes issue in workflow
+- Solves issue in notification
+-  Fixes issue in package.json prod build script
+
+### Features:
+-------------
+- Adds variable and fallback text support
+- Adds custom field support in workflow
+- Added custom fields filters and fields in create and edit for
+- Adds additional social profiles in people
+</Update>
+
+<Update label="July 2025" description="v1.0.3">
+# 1.0.3
+--------------------------
+
+### Feature
+---------------
+- Company Id support in update lead object type node
+</Update>
+
+<Update label="July 2025" description="v1.0.1">
+# 1.0.1
+--------------------------
+
+### Feature
+---------------
+- Webhook trigger support in workflow
+</Update>
+
+<Update label="July 2025" description="v1.0.0">
+
+# 1.0.0
+--------------------------
+
+Release date: July 2, 2026  
+Codename: First Light
+
+Thread CRM v1.0.0 is the first production release of the platform — a multi-tenant sales and marketing CRM built on a two-layer backend architecture: the Core Engine (platform services) and Business Modules (CRM features). Together they deliver a complete go-to-market stack: manage pipeline, run outbound campaigns, automate workflows, and engage across email, voice, WhatsApp, and social channels.
+
+---
+
+## Highlights
+
+- Multi-tenant workspaces with isolated data, role-based access, and team collaboration
+- Full CRM core — leads, contacts, companies, deals, tasks, notes, and activity timelines
+- Multi-channel outbound — email, LinkedIn, WhatsApp, and AI voice call sequences
+- Built-in AI — record-level copilot, template generation, and workflow AI agents
+- Automation engine — visual workflows with triggers, branching, delays, and HTTP/code actions
+- Developer-ready — OAuth API, workspace API keys, outbound webhooks, and connected apps
+
+---
+
+## Platform Foundation (Core Engine)
+
+The Core Engine powers identity, tenancy, and shared infrastructure for every workspace.
+
+### Identity & Access
+
+- Email/password sign-up and sign-in with JWT sessions (access + refresh tokens)
+- Social login via Google and Microsoft OAuth (PKCE)
+- Optional email OTP verification and password reset flows
+- Invite-link signup that can bypass OTP when the invite proves mailbox access
+- Multi-workspace membership — users can belong to and switch between workspaces
+
+### Workspace & Team
+
+- Workspace activation with isolated database provisioning per tenant
+- Custom workspace name, domain, subdomain, and logo branding
+- Team invitations by email or public invite link, with role assignment
+- Guided onboarding flow (profile setup, team invite, completion tracking)
+- Default role configuration for new members
+
+### Files & Storage
+
+- Secure file uploads and downloads scoped to workspace
+- Attachments on CRM records, profile pictures, and workspace logos
+- Pluggable storage: local filesystem or S3-compatible object storage (AWS / MinIO)
+- Optional auto-sync to Google Drive and OneDrive under organized folder paths
+
+### Email Infrastructure
+
+- Asynchronous email delivery with retry via background job queue
+- Send via workspace SMTP settings or OAuth-connected Outlook accounts
+- Transactional email for invites, OTP verification, and password reset
+
+### Integrations & Admin
+
+- OAuth 2.0 API for third-party apps with scoped access to contacts, companies, leads, and deals
+- Platform Admin Panel for super-admins: workspace search, user management, and platform stats
+- Impersonation for authorized support sessions with audit-friendly token claims
+- Domain manager for workspace URL generation (subdomain + custom domain support)
+
+### AI & Reliability
+
+- Streaming AI chat endpoint with multi-provider support (OpenAI, Anthropic, xAI)
+- Per-workspace AI usage and cost tracking
+- Background job processing (sync, PostgreSQL pg-boss, or Redis BullMQ)
+- Global exception handling with optional Sentry reporting
+- Health check endpoint (`/healthz`) for load balancers and deploy verification
+- Redis-backed session storage for production
+
+---
+
+## CRM Core (Business Modules)
+
+### Sales Pipeline
+
+- Leads — full lifecycle management, search/filter, favorites, bulk update, soft delete
+- Contacts (People) — import/export, duplicate validation, bulk create, advanced search
+- Companies (Accounts) — owner assignment, related records, Google News RSS intel
+- Deals — kanban pipeline with stage/position updates, lead-to-deal conversion, import/export
+- Lists (Segments) — static lead/contact lists for campaigns and targeting
+- Custom Fields — user-defined fields on any CRM entity with per-record values
+
+### Engagement & Communication
+
+- CRM Email Threads — send, reply, and log email conversations on lead/contact records with merge fields
+- Unified Inbox (Workspace Email) — full mailbox with folders, search, drafts, forward/reply via Gmail, Outlook, or IMAP
+- Email Templates — reusable templates with dynamic variables and AI content generation
+- Email Signatures — per-user HTML signatures with default selection
+- Email Health — deliverability monitoring, DNS/auth checks, blacklist status, and warmup controls
+- Calls — call logging, export, browser-based dialing via Twilio, AI outbound calls via Vapi
+- WhatsApp — connect WhatsApp Business via Meta OAuth, send/receive on lead records
+
+### Marketing & Growth
+
+- Marketing Campaigns — multi-step outbound sequences across email, LinkedIn, WhatsApp, and AI voice
+    - AI-generated sequence content, audience management, launch/pause/resume lifecycle
+    - Open/link tracking, health scores, analytics, and engagement-triggered step conditions
+    - Bulk sending via SendGrid, Brevo, or Smartlead
+- Forms IQ — embeddable lead-capture forms with public submission endpoints, analytics, and A/B testing
+- Visitors IQ — website visitor tracking via embeddable script with identity resolution and analytics
+- Social Hub — publish to LinkedIn, Instagram, and Facebook; manage DMs, comments, and engagement
+- Lead Scoring — configurable rules auto-scored from email events, form submissions, calls, meetings, and site visits
+
+### Automation & Intelligence
+
+- Workflows — visual automation builder with record triggers, schedules, webhooks, and manual launch
+    - Actions: CRUD on records, send/draft email, HTTP requests, custom code, AI agent, delays, branching
+    - Versioned drafts, publish lifecycle, run history, cancel/retry
+- AI Copilot — contextual assistant on deals and leads: summaries, engagement insights, risks, next actions, follow-up drafts, calling scripts, and meeting briefs
+- Data Enrichment — upload contact lists and enrich via Apollo and People Data Labs (PDL)
+
+### Productivity
+
+- Tasks — assignable tasks linked to any CRM record with configurable statuses
+- Notes — rich notes attached to records with search and soft delete
+- Activity Timeline — unified activity feed across all CRM objects
+- Calendar — events linked to leads, contacts, and deals with Google/Outlook calendar sync
+- Dashboard — customizable layouts with lead volume trends and deal summaries
+- Notifications — in-app notification center with read/unread management
+- Attachments & Drive — file attachments on records; Google Drive and OneDrive sync
+- Reports — scheduled report definitions with on-demand send
+
+### Administration
+
+- Workspace Members & Teams — invite users, assign roles, organize sales teams
+- Roles & Permissions — object-level CRUD permissions across all CRM modules
+- Workspace Settings — configurable lead stages, deal stages, task statuses, currencies, and departments
+- Audit Log — queryable trail of record changes
+- Developer Settings — central hub for provider API keys (calling, email, AI, drive, enrichment), outbound webhooks, connected apps, and workspace API keys
+
+---
+
+## Integrations at a Glance
+
+|Category|Providers|
+|---|---|
+|Voice / AI Calling|Twilio, Vapi, Retell AI|
+|Email|Gmail, Outlook, IMAP/SMTP, SendGrid, Brevo, Smartlead, Mailgun|
+|Messaging & Social|WhatsApp (Meta), LinkedIn, Instagram, Facebook|
+|AI|OpenAI, Anthropic, Gemini (xAI compatible)|
+|Data Enrichment|Apollo, People Data Labs|
+|Storage & Calendar|Google Drive, OneDrive, Google Calendar, Outlook Calendar|
+|Auth|Google OAuth, Microsoft OAuth|
+
+---
+
+## Architecture Notes
+
+- Two-layer design: `CoreEngineModule` (21 platform modules) + `ModulesModule` (40+ feature modules)
+- Multi-tenant isolation: each workspace gets its own data store
+- Queue-driven async work: email, imports, campaigns, workflows, and webhooks run in background jobs
+- Pluggable drivers: file storage (local/S3), message queue (sync/pg-boss/BullMQ), logging, and exception handling
+
+---
+
+## Known Limitations (v1.0.0)
+
+- Opportunity module exists as a data model only — Deals is the active sales pipeline
+- Two email surfaces: Messaging (CRM-logged threads on records) vs. Workspace Email (full personal inbox)
+</Update>
