@@ -3,7 +3,232 @@ title: "Changelog"
 description: "Product updates and announcements"
 icon: "list-check"
 ---
-<Update label="July 2025" description="v1.0.3">
+<Update label="August 2026" description="v1.1.0">
+# 1.1.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.1.0.png" />
+</Frame>
+
+## 🚀 Features
+
+### WhatsApp
+
+1. **WhatsApp template creation**
+    - Added ability to create WhatsApp templates in the Templates module.
+2. **WhatsApp templates in Direct Messages**
+    - Added support for selecting/sending WhatsApp templates through direct messaging.
+
+---
+
+### Lead & Deal Management
+
+3. **Custom Lead Sources**
+    - Added custom lead sources.
+    - Added seed data and APIs for managing lead sources.
+4. **Custom Deal Sources**
+    - Added custom deal sources with APIs and seed support.
+5. **Lead ordering**
+    - Added configurable ordering/sorting for leads.
+6. **Deal ordering**
+    - Added configurable ordering/sorting for deals.
+7. **Task ordering**
+    - Added configurable ordering/sorting for tasks.
+8. **People converted/not-converted filter**
+    - Added People list filtering based on whether a person has been converted to a lead.
+9. **LinkedIn URL on Leads**
+    - Added LinkedIn URL support during:
+        - Lead creation
+        - Lead import
+        - Person → Lead conversion
+
+---
+
+### People & Companies
+
+10. **Person address fields**
+    - Added address fields to People.
+11. **Independent Lead address**
+    - Lead address is now maintained independently instead of being tied to the person's address.
+12. **Server-side People search for Companies**
+    - Added server-side people search functionality within companies.
+13. **Company CSV field persistence**
+    - Company CSV fields are now persisted during import.
+    - Also includes latitude/longitude decimal column handling.
+
+---
+
+### Custom Fields
+
+14. **JSON custom field type**
+    - Added JSON as a supported custom-field data type.
+
+---
+
+### Bulk Operations
+
+15. **Bulk company owner update**
+    - Added API endpoints for bulk owner changes on companies.
+
+---
+
+### LinkedIn
+
+16. **LinkedIn account connection**
+    - Added LinkedIn account connection functionality through the extension/direct-login flow.
+17. **LinkedIn connection requests**
+    - Added ability to send LinkedIn connection requests.
+18. **LinkedIn Playwright outreach — Phase 1**
+    - Added the first phase of LinkedIn Playwright-based outreach.
+
+---
+
+### AI / Copilot / Activities
+
+19. **AI activity logging for People, Leads and Deals**
+    - Added AI-generated/logged activity support for People, Leads and Deals.
+20. **Calls section in Activities**
+    - Added a dedicated Calls section to activities.
+21. **AI stakeholder/sequence API proxies**
+    - Added NestJS proxies for stakeholder-gap functionality and sequence approve/dismiss actions.
+22. **Briefing cache**
+    - Added a briefing cache entity, likely supporting AI/copilot briefing functionality.
+
+---
+
+# 🐛 Bug Fixes
+
+### Email / Inbox
+
+23. **Correct email delivery states**
+
+- Fixed handling of failed email delivery states.
+
+24. **Outlook reply parent preservation**
+
+- Fixed Outlook reply-parent relationships across draft sending and hydration.
+
+25. **CRM reply draft parent preservation**
+
+- Fixed reply-parent relationships during the CRM email draft/send flow.
+
+26. **Email thread count duplication**
+
+- Fixed duplicate CRM thread messages affecting list counts.
+
+27. **Reply parents and template image ownership**
+
+- Fixed email reply-parent handling and template image ownership.
+
+28. **Email sender name mapping**
+
+- Improved sender-name mapping from email providers.
+
+29. **Email CC/BCC template issues**
+
+- Fixed CRM email CC/BCC template-related issues.
+
+---
+
+### WhatsApp
+
+30. **WhatsApp connection errors**
+
+- Improved encryption-key resolution.
+- Improved handling of WhatsApp connection errors.
+
+---
+
+### Lead / Person / Company
+
+31. **Person import company association**
+
+- Fixed company name attachment when importing people.
+
+32. **Lead duplicate detection**
+
+- Fixed lead duplicate checking to use email appropriately.
+- Prevented incorrect LinkedIn association with company.
+
+33. **People/Lead/Company export**
+
+- Fixed export issues for People, Leads and Companies.
+
+34. **Person phone country code**
+
+- Fixed default person phone country code behavior.
+
+35. **Person scoring during conversion**
+
+- Fixed person scoring so the existing scoring row is reused when converting a person to a lead.
+
+---
+
+### AI Calls
+
+36. **AI Call activity creator**
+
+- Fixed AI Call activity timeline to display the Created By name.
+
+37. **AI Call task/meeting associations**
+
+- Fixed AI Call demo tasks and meetings so they are linked to the deal and all POCs.
+
+38. **Duplicate AI Call demo tasks/meetings**
+
+- Prevented duplicate demo tasks and meetings from being created by AI Call.
+
+---
+
+### LinkedIn
+
+39. **LinkedIn account connection bugs**
+
+- Fixed issues in LinkedIn account connection.
+
+40. **LinkedIn cookies/storage**
+
+- Fixed LinkedIn account connection and cookie-storage behavior.
+
+41. **LinkedIn data storage**
+
+- Removed problematic LinkedIn data storage.
+
+---
+
+### Campaigns
+
+42. **Campaign-related bugs**
+
+- Resolved multiple campaign-related issues.
+
+---
+
+### AI / Dashboard
+
+43. **Dashboard AI API routing**
+
+- Fixed dashboard AI APIs to route through MCP consistently with other copilots.
+
+44. **AI-generated lead draft**
+
+- Fixed issues with AI-generated lead drafts.
+- Fixed company key decision-maker handling.
+
+---
+
+### Workspace
+
+45. **Workspace default currency**
+
+- Fixed/defaulted workspace currency handling.
+
+46. **Notification authentication**
+
+- Fixed missing notification auth token handling to return **403 instead of 500**.
+
+</Update>
+<Update label="July 2026" description="v1.0.12">
 # 1.0.12
 --------------------------
 ### Bugfixes:
@@ -21,7 +246,7 @@ icon: "list-check"
 - Adds additional social profiles in people
 </Update>
 
-<Update label="July 2025" description="v1.0.3">
+<Update label="July 2026" description="v1.0.3">
 # 1.0.3
 --------------------------
 
@@ -30,7 +255,7 @@ icon: "list-check"
 - Company Id support in update lead object type node
 </Update>
 
-<Update label="July 2025" description="v1.0.1">
+<Update label="July 2026" description="v1.0.1">
 # 1.0.1
 --------------------------
 
@@ -39,10 +264,13 @@ icon: "list-check"
 - Webhook trigger support in workflow
 </Update>
 
-<Update label="July 2025" description="v1.0.0">
+<Update label="July 2026" description="v1.0.0">
 
 # 1.0.0
---------------------------
+
+<Frame>
+  <img src="/images/releases/release_banner_1.0.0.png" />
+</Frame>
 
 Release date: July 2, 2026  
 Codename: First Light

@@ -227,6 +227,7 @@
   },
   "background": {
     "image": "/images/background.avif",
+    "decoration": "gradient",
     "color": {
       "light": "#FFFFFF",
       "dark": "#111111"
