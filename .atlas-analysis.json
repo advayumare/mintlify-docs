@@ -1,0 +1,92 @@
+{
+  "projectType": "saas",
+  "projectName": "B2B Leads Market CRM",
+  "projectDescription": "A B2B CRM platform for managing leads, contacts, companies, and deals with email automation and API integration.",
+  "theme": "luma",
+  "primaryColor": "#2563EB",
+  "lightColor": "#EFF6FF",
+  "darkColor": "#1E3A5F",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Records",
+            "pages": [
+              "records/contacts",
+              "records/companies",
+              "records/leads",
+              "records/deals",
+              "records/tasks",
+              "records/notes"
+            ]
+          },
+          {
+            "group": "Engage",
+            "pages": [
+              "engage/email-sequences",
+              "engage/email-templates",
+              "engage/call-logs",
+              "engage/forms-iq"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/workspace",
+              "settings/members-roles",
+              "settings/custom-fields",
+              "settings/email-setup",
+              "settings/api-keys"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "/api-reference/openapi.json"
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Lead management with pipeline tracking and bulk import",
+    "Contact & company database with activity timelines",
+    "Deal pipeline with stage customization and forecasting",
+    "Email sequences and templates for automated outreach",
+    "FormsIQ for web-based lead capture",
+    "Call logs for tracking sales conversations",
+    "Custom fields for Contacts, Companies, Leads, and Deals",
+    "Ideal Customer Profile (ICP) configuration",
+    "Role-based access control with granular permissions",
+    "REST API with Bearer Token authentication"
+  ],
+  "publicApiSurface": [
+    "POST /lead — Create a new lead",
+    "POST /lead/all — List all leads",
+    "PUT /lead/{id} — Update a lead",
+    "DELETE /lead/soft — Soft delete leads",
+    "POST /person — Create a contact",
+    "POST /person/all — List all contacts",
+    "PATCH /person/update/{id} — Update a contact",
+    "POST /company — Create a company",
+    "POST /company/all — List all companies",
+    "PATCH /company/update/{id} — Update a company",
+    "POST /task — Create a task",
+    "GET /task/all — List all tasks",
+    "PATCH /task/{id} — Update a task",
+    "POST /note — Create a note",
+    "GET /note/all — List all notes",
+    "PATCH /note/{id} — Update a note",
+    "GET /workspace-member — List workspace members",
+    "POST /api-keys — Create an API key",
+    "PATCH /api-keys/{id}/regenerate — Regenerate an API key"
+  ]
+}
