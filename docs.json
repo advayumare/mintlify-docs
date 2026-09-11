@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Thread CRM Documentation",
+  "name": "Thread | Documentation",
   "theme": "almond",
   "fonts": {
     "family": "Google Sans"
   },
   "colors": {
-    "primary": "#6729ff",
+    "primary": "#19181e",
     "light": "#EFF6FF",
     "dark": "#6729ff"
   },
@@ -24,9 +24,16 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.threadcrm.ai/"
-    }
+      "label": "Get Started",
+      "href": "https://app.threadcrm.ai/auth/signup"
+    },
+    "links": [
+      {
+        "type": "button",
+        "label": "Login",
+        "href": "https://app.threadcrm.ai/auth/login"
+      }
+    ]
   },
   "navigation": {
     "tabs": [
@@ -226,12 +233,7 @@
     "href": "https://threadcrm.ai"
   },
   "background": {
-    "image": "/images/background.avif",
-    "decoration": "gradient",
-    "color": {
-      "light": "#FFFFFF",
-      "dark": "#111111"
-    }
+    "decoration": "windows"
   },
   "api": {
     "openapi": "openapi.json"
