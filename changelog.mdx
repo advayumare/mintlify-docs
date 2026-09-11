@@ -3,12 +3,157 @@ title: "Changelog"
 description: "Product updates and announcements"
 icon: "list-check"
 ---
+
+<Update label="September 2026" description="v1.2.0">
+# ThreadCRM v1.2.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.2.0.png" />
+</Frame>
+
+**Release Date:** September 11, 2026
+
+ThreadCRM v1.2.0 brings significant improvements across **custom dashboards, workflows, WhatsApp automation, reporting, AI usage, CRM limits, billing, and email**, along with several reliability and security fixes.
+
+## 🚀 New Features
+
+### Custom Dashboards
+
+* Added support for **custom dashboards**, enabling users to build dashboards tailored to their CRM needs.
+* Added backend support for custom dashboard configuration and data.
+
+### 📊 CRM Reporting
+
+* Introduced a new **Reporting** capability.
+* Reports can now be **downloaded** for offline use.
+* Added support for **scheduled reporting**, making it easier to receive reports automatically.
+
+### 💬 WhatsApp in Workflows
+
+* Added **WhatsApp actions to workflows**, enabling automated WhatsApp communication as part of CRM workflows.
+* Added validation for WhatsApp template buttons before submitting templates to Meta.
+
+### 🤖 AI & Lead Qualification
+
+* Enhanced the **Lead Qualification workflow**.
+* Consolidated multiple lead qualification workflows into a unified workflow.
+* Added and updated the Lead Qualification workflow template.
+* Improved AI API handling and resolved AI API timing issues.
+* AI credit usage is now tracked for **Copilot and Lead Scoring LLM usage**.
+
+### 🔗 Clustering
+
+* Added APIs supporting the **clustering detail page**.
+* Added APIs for **cluster summary** information.
+* Added APIs for cluster modal/card data.
+
+### 💾 CRM Storage & Usage Limits
+
+* Added **per-entity CRM storage limits**.
+* Added a **shared CRM storage quota across record modules**.
+* Connected-drive files are excluded from CRM storage calculations.
+* Added **custom-field plan limits per CRM module**.
+* Added **pipeline stage quotas per type** with plan-limit enforcement.
+
+### 👥 User & Seat Management
+
+* Added enforcement of **licensed seat limits** during user invitations.
+* Seat limits are now also enforced during **invite acceptance and signup**.
+* Added handling for plans where the maximum user count is zero.
+* Removed extra user seats from the add-on catalogue.
+* Added server-side **pagination and filtering** for the User Access API.
+
+### 🏢 Workspace Administration
+
+* Super Admin workspace statistics now include:
+
+  * Active workspaces
+  * Inactive workspaces
+  * Total workspaces
+  * Pending workspaces
+* Improved workspace ID propagation across AI and non-MCP tool APIs.
+
+## ✨ Improvements
+
+### Email
+
+* Improved email sending reliability.
+* Fixed issues with the **Send Mail workflow node executor**.
+* Added support for both **single-bracket and double-bracket template variables**.
+* Added secure APIs for **ZIP attachment previews**.
+* Improved synchronization between open CRM threads and Inbox updates.
+
+### Workflows
+
+* Improved workflow behavior and reliability.
+* Fixed issues with the **If/Else workflow node**.
+* Updated workflow draft/publish validation so validations are enforced during publishing rather than drafting.
+* Added additional improvements to workflow execution.
+
+### List Views
+
+* Added backend changes supporting enhanced **List View** functionality.
+
+### Deal Activity & Stakeholders
+
+* Deal activity timelines now resolve **Point of Contact names** in activity diffs.
+* Stakeholder gap **approve and dismiss actions** are now recorded in the Deal Activity tab.
+
+### Billing & Subscriptions
+
+* Improved subscription and campaign handling.
+* Fixed subscriber counts in the Plan Management API.
+* Removed duplicate usage quota entries from billing usage.
+* Seat pricing snapshots now preserve **currency and tax rate** information.
+* Improved enforcement of subscription and plan limits.
+
+## 🐛 Bug Fixes
+
+* Fixed email sending issues.
+* Fixed Send Mail workflow node execution.
+* Fixed workflow If/Else node issues.
+* Fixed Inbox delta-sync UUID trimming errors.
+* Fixed AI API timing and calling issues.
+* Fixed subscription-related issues.
+* Fixed campaign bounce-related issues.
+* Fixed duplicate billing usage quota records.
+* Fixed incorrect subscriber counts in plan management.
+* Fixed authentication cookie handling by clearing the `authTokenPair` cookie on logout.
+* Fixed CRM contact synchronization so changes to People contacts propagate to linked Leads and Deal POCs.
+* Fixed recommended next-step behavior for Leads and Deals.
+* Fixed task-list counting to count distinct active tasks.
+
+## 🔒 Security & Reliability
+
+* Improved authentication cleanup during logout.
+* Added secure ZIP attachment preview APIs.
+* Strengthened plan-limit enforcement across users, records, storage, custom fields, and pipeline stages.
+* Improved workspace isolation by ensuring workspace IDs are propagated to relevant APIs.
+
+## 📌 Summary
+
+**ThreadCRM v1.2.0** is a substantial feature release focused on:
+
+* Custom dashboards and reporting
+* WhatsApp-powered workflows
+* AI and lead qualification improvements
+* Clustering capabilities
+* CRM storage and usage controls
+* Subscription and seat-limit enforcement
+* Email and workflow reliability
+* Improved administration and activity tracking
+* Multiple billing, Inbox, and campaign fixes
+
+</Update>
+
 <Update label="August 2026" description="v1.1.0">
 # 1.1.0
 
 <Frame>
   <img src="/images/releases/release_banner_1.1.0.png" />
 </Frame>
+
+**Release Date:** August, 2026
 
 ## 🚀 Features
 
