@@ -4,6 +4,775 @@ description: "Product updates and announcements"
 icon: "list-check"
 ---
 
+<Update label="October 2026" description="v1.5.0">
+# ThreadCRM v1.5.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.5.0.png" />
+</Frame>
+
+# ThreadCRM — Release Notes v1.5.0
+
+**Release Date:** October 1, 2026  
+**Previous Version:** v1.4.0  
+**Codename:** Connected Workflows
+
+## 🚀 Highlights
+
+ThreadCRM v1.5.0 expands the platform's communication and automation capabilities while strengthening subscription management and CRM controls.
+
+This release introduces a new **WhatsApp Inbox**, improves **workflow-based email sending**, adds event triggers for automated workflows, enhances **lead and deal plan enforcement**, and brings several improvements to **AI, reporting, dashboards, billing, and user management**.
+
+---
+
+## ✨ New Features
+
+### 1. WhatsApp Inbox
+
+ThreadCRM now includes a dedicated **WhatsApp Inbox** experience.
+
+**What's new:**
+
+- Added the WhatsApp Inbox module.
+- Integrated the WhatsApp messaging module into the CRM.
+- Provides a dedicated foundation for managing WhatsApp conversations from within ThreadCRM.
+
+**Why it matters:**  
+Teams can bring WhatsApp conversations into their CRM workspace and manage customer communication alongside their existing CRM activities.
+
+---
+
+### 2. Workflow Email Sending with Gmail
+
+Workflow automation now supports sending emails through Gmail.
+
+**What's new:**
+
+- Added Gmail-based email sending for workflows.
+- Workflow-sent emails are now maintained in the CRM's email tab.
+- Improved synchronization between workflow email activity and the email experience.
+
+**Why it matters:**  
+Automated emails sent through workflows can now remain visible within the CRM, providing better continuity between automation and manual communication.
+
+---
+
+### 3. Event Triggers for Lead Creation & Updates
+
+Workflow automation receives new event-based trigger support.
+
+**What's new:**
+
+- Added event handling for DAG triggers.
+- Added events for **lead creation**.
+- Added events for **lead updates**.
+
+**Why it matters:**  
+CRM changes can now serve as automation triggers, creating a foundation for more event-driven workflows.
+
+---
+
+### 4. Enhanced Lead & Deal Stage Management
+
+Lead and user stage management has been updated.
+
+**What's new:**
+
+- Updated lead stage handling.
+- Updated user stage functionality.
+- Added support for hiding lead stages where applicable.
+- Improved stage-related CRM behavior.
+
+---
+
+### 5. Subscription & Plan Limit Improvements
+
+Subscription management receives several important improvements.
+
+**What's new:**
+
+- Purchased plan limits can now be frozen so later catalog changes apply only to new buyers.
+- Lead and Deal plan limits are enforced during conversion.
+- Campaign add-ons are now mapped to campaign limits rather than People limits.
+- Licensed seats are constrained by the purchased seat count.
+- Current-period usage is considered when calculating licensed seats.
+- Purchased AI credits and shared add-on usage are reflected in billing.
+- AI credit packs are streamlined in the feature catalog.    
+
+**Why it matters:**  
+Existing customers can retain the limits associated with their purchased plans while new plan configurations can evolve independently.
+
+---
+
+### 6. Improved Billing & Invoices
+
+Billing information is now more transparent.
+
+**What's new:**
+
+- Invoices now show:
+    - Plan fees
+    - Add-on prices
+    - GST
+- Tax calculations use the tax rate selected when the plan was created.
+
+**Why it matters:**  
+Customers and administrators get clearer visibility into subscription charges and applicable taxes.
+
+---
+
+## 📊 Reporting & Dashboard Improvements
+
+### CRM Reporting
+
+Reporting receives additional filtering and validation improvements.
+
+**What's new:**
+
+- Lead Source filters now support **partial matching**.
+- Improved handling of widget date ranges after preview validation.
+- Additional reporting issue fixes.
+
+### Custom Dashboards
+
+Custom Dashboard functionality has been refined.
+
+**What's new:**
+
+- Improved handling of multiple **AND filters on the same field**.
+- Improved value validation.
+- Improved employee headcount handling.
+- Fixed empty employee-range values in charts.
+- Improved dashboard widget UX.
+- Fixed lead-score status grouping in dashboard charts.
+
+---
+
+## 🤖 AI & Automation Improvements
+
+### AI Studio
+
+The AI Studio experience has received reliability improvements.
+
+**What's new:**
+
+- Fixed issues affecting AI Studio.
+- Improved handling of good and bad AI responses.
+- Continued workspace-aware AI improvements.
+
+### Workflow & Pipeline Reliability
+
+- Improved MLOP pipeline trigger handling.
+- Fixed issues related to MLOP pipeline trigger calls.
+- Added testing fixes around MLOP triggers.
+- Improved DAG/event trigger processing.
+
+---
+
+## 👥 User & Workspace Management
+
+### Seat Management
+
+User licensing has been tightened to match purchased capacity.
+
+**What's new:**
+
+- Invited users are capped according to purchased seats.
+- Licensed seats are granted based on the plan's user limit.
+- Current-period usage is considered when calculating available seats.
+
+This helps keep workspace access aligned with the subscription configuration.
+
+---
+
+## 🐛 Bug Fixes
+
+### CRM
+
+- Fixed manually entered company names being overwritten on Leads.
+- Fixed manually entered company information when switching a Lead away from an existing Company.
+- Fixed Lead Score status grouping in CRM dashboards.
+- Fixed dashboard country-count issues related to People imports.
+
+### Reporting
+
+- Fixed report-related issues.
+- Fixed widget date-range handling after preview validation.
+- Improved Lead Source filtering.
+
+### AI
+
+- Fixed AI Studio issues.
+- Fixed inconsistent handling of good and bad AI responses.
+- Improved AI-related workflow and pipeline trigger behavior.
+
+### Email
+
+- Workflow-sent emails are now retained in the Email tab.
+- Improved Gmail workflow email handling.
+
+### Dashboards
+
+- Fixed empty employee-range values in charts.
+- Improved multiple-AND-filter handling.
+- Improved dashboard value validation.
+    
+
+### Billing & Subscriptions
+
+- Fixed tax-rate handling for existing plans.
+- Fixed AI credit pack catalog configuration.
+- Fixed purchased AI credit and shared add-on usage calculations.
+- Fixed campaign add-ons being associated with the wrong usage limits.
+- Improved plan-limit enforcement during Lead and Deal conversion.
+
+---
+
+## 🔒 Subscription & Access Control
+
+v1.5.0 strengthens subscription enforcement throughout the platform.
+
+Key improvements include:
+
+- Purchased plan limits remain stable for existing customers.
+- New catalog changes can apply to new buyers without unexpectedly changing existing purchased limits.
+- Lead and Deal conversions respect configured limits.
+- Campaign add-ons use the correct campaign limits.
+- Workspace invitations respect purchased seat capacity.
+- Licensed-seat calculations account for current-period usage.
+- AI credits and add-on usage are reflected more accurately in billing.
+
+---
+
+## 📋 What's New at a Glance
+
+|Area|What's New|
+|---|---|
+|**WhatsApp**|New WhatsApp Inbox module|
+|**Email Automation**|Gmail-based workflow email sending|
+|**Workflow Automation**|Lead create/update event triggers|
+|**Lead Management**|Updated lead stages and stage visibility|
+|**User Management**|Purchased-seat enforcement|
+|**Subscriptions**|Frozen purchased limits and improved usage enforcement|
+|**AI**|AI Studio and response reliability improvements|
+|**AI Credits**|Improved purchased-credit and add-on usage tracking|
+|**Reporting**|Partial-match Lead Source filters|
+|**Dashboards**|Advanced filter and chart handling|
+|**Billing**|Plan fees, add-ons, and GST on invoices|
+|**Tax**|Plan-specific tax-rate preservation|
+|**Campaigns**|Correct campaign add-on limit mapping|
+|**Workflow Email**|Workflow emails retained in Email tab|
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.5.0** brings CRM communication, automation, and subscription management closer together.
+
+### Key Highlights
+
+- 💬 **WhatsApp Inbox** for centralized messaging
+- 📧 **Gmail workflow email sending**
+- ⚡ **Lead creation and update event triggers**
+- 🔄 Improved workflow and pipeline trigger reliability
+- 📊 More powerful **Custom Dashboard filters**
+- 📈 Improved **CRM Reporting** filters and date handling
+- 👥 Stronger **seat and user-limit enforcement**
+- 💳 More accurate **subscription and add-on usage**
+- 🧾 Detailed **plan, add-on, and GST information on invoices**
+- 🤖 Improved **AI Studio and AI response reliability**
+- 🎯 Better **Lead and Deal plan-limit enforcement**
+- 📱 Expanded WhatsApp communication capabilities    
+
+**ThreadCRM v1.5.0 — Connect Conversations. Automate Work. Control Growth.**
+
+</Update>
+
+<Update label="September 2026" description="v1.4.0">
+# ThreadCRM v1.4.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.4.0.png" />
+</Frame>
+
+**Release Date:** September 23, 2026  
+**Previous Version:** v1.3.0  
+**Codename:** Intelligent Platform
+
+## 🚀 Highlights
+
+ThreadCRM v1.4.0 introduces major improvements across **AI, MCP integrations, subscription management, Custom Dashboards, usage controls, and platform administration**.
+
+This release also lays the foundation for deeper AI-powered interactions with ThreadCRM through the introduction of **MCP Module Phase 1**, while making AI plans, usage limits, add-ons, and workspace licensing more flexible and predictable.
+
+---
+
+## ✨ New Features
+
+### 1. MCP Integration — Phase 1
+
+ThreadCRM now introduces the first phase of its **Model Context Protocol (MCP)** integration.
+
+**What's new:**
+
+- Added the initial MCP module.
+- Added fixes and refinements to the MCP CRM modules.
+- MCP tool APIs now receive the required access token.
+- Improved workspace context handling for AI-related operations.
+
+**Why it matters:**  
+MCP provides a foundation for connecting ThreadCRM's CRM capabilities with AI assistants and agent-based experiences, enabling AI tools to interact with CRM functionality in a structured way.
+
+---
+
+### 2. New AI Plans
+
+ThreadCRM's AI packaging has been redesigned to simplify AI add-ons.
+
+**What's new:**
+
+- Replaced separate **People AI** and **User AI** add-on packs.
+    
+- Introduced consolidated AI plans:
+    
+    - **AI Starter**
+    - **AI Growth**
+    - **AI Pro**
+
+**Why it matters:**  
+The new structure provides a clearer way to package AI capabilities and gives customers a more straightforward path to scale their AI usage.
+
+---
+
+### 3. Workspace Add-On Usage Tracking
+
+Add-on usage management has been enhanced to provide more accurate subscription-period tracking.
+
+**What's new:**
+
+- Add-ons are now bound to the applicable **plan period**.
+- Workspace add-on usage is tracked **per user**.
+- Improved usage tracking across subscription periods.
+
+**Why it matters:**  
+Usage and add-on consumption can now be aligned more accurately with the customer's subscription lifecycle.
+
+---
+
+### 4. Per-User AI & Usage Limits
+
+Usage management has been refined to provide better user-level visibility and enforcement.
+
+**What's new:**
+
+- Usage and AI credits are counted per signed-in user.
+- Per-user usage limits are surfaced.
+- AI credit usage is aligned with plan-limit enforcement.
+- Improved handling of plan-specific AI limits.
+
+**Why it matters:**  
+Administrators get more predictable control over how usage and AI credits are consumed across workspace members.
+
+---
+
+### 5. Plan-Based Feature Controls
+
+ThreadCRM now provides more granular control over which features are available under each subscription plan.
+
+**What's new:**
+
+- CRM Reports can be locked when disabled for a plan.
+- Custom Dashboards can be locked when disabled for a plan.
+- Limit-only AI features are excluded from the public plan comparison.
+- Email integration limits can be configured as optional.
+- Improved preservation of email integration limits during plan updates.
+
+**Why it matters:**  
+Administrators can configure subscription plans more precisely while keeping customer-facing plan comparisons focused on relevant capabilities.
+
+---
+
+### 6. Super Admin Auto-Pay Configuration
+
+Super Admin subscription administration now includes an API for auto-payment configuration.
+
+**What's new:**
+
+- Added Super Admin auto-pay configuration API.
+- Improved subscription administration capabilities.
+
+---
+
+### 7. License Removal & User Access Control
+
+User licensing behavior has been strengthened.
+
+**What's new:**
+
+- Users are automatically logged out when an administrator removes their license.
+- Improved license enforcement across active sessions.
+
+**Why it matters:**  
+Removing a user's license now takes effect immediately for their active session, helping ensure subscription and access controls remain synchronized.
+
+---
+
+### 8. Custom Dashboard Improvements
+
+Custom Dashboards receive additional backend and export improvements.
+
+**What's new:**
+
+- Improved Custom Dashboard widget UX.
+- Dashboard appearance settings are now included in dashboard exports.
+- Continued improvements to dashboard customization and configuration.
+
+**Why it matters:**  
+Exported dashboards can now better preserve the dashboard's configured appearance and presentation.
+
+---
+
+## 🔧 Improvements
+
+### Subscription & Billing
+
+- Improved plan-limit enforcement.
+- Improved AI credit tracking.
+- Improved add-on period management.
+- Improved per-user usage tracking.
+- Improved email integration plan-limit handling.
+- Added additional subscription administration controls.
+
+### AI Platform
+
+- Improved workspace-aware AI functionality.
+- Improved AI credit accounting.
+- Refined AI plan packaging.
+- Improved integration between AI capabilities and subscription limits.
+
+### MCP
+
+- Added the first phase of MCP support.
+- Improved CRM module support for MCP.
+- Improved authentication when accessing MCP tools.
+- Improved workspace context handling for AI integrations.
+
+### Dashboards
+
+- Improved Custom Dashboard widget UX.
+- Dashboard exports now preserve appearance settings.
+
+---
+
+## 🐛 Bug Fixes
+
+### Dashboard & CRM
+
+- Fixed country count issues related to People imports and dashboard data.
+- Improved Custom Dashboard widget behavior.
+- Fixed dashboard export appearance handling.
+
+### AI & Authentication
+
+- Fixed GPT OAuth issues.
+- Fixed access-token handling for MCP tool APIs.
+- Improved workspace-aware AI processing.
+
+### Calendar
+
+- Fixed a calendar reminder crash when `startTime` is provided as a Date value.
+
+### Subscription & Usage
+
+- Fixed incorrect AI credit and usage accounting.
+- Fixed alignment between AI credit usage and plan enforcement.
+- Fixed public plan comparisons displaying limit-only AI features.
+- Improved handling of optional email integration limits.
+
+### Platform
+
+- Fixed compilation issues.
+- Improved reliability of MCP CRM modules.
+
+---
+
+## 📊 What's New at a Glance
+
+|Area|What's New|
+|---|---|
+|**MCP**|MCP Phase 1, CRM module support, authenticated MCP tools|
+|**AI**|AI Starter, Growth & Pro plans|
+|**AI Usage**|Per-user AI credits and usage limits|
+|**Subscriptions**|Plan-period add-ons and improved limit enforcement|
+|**Dashboards**|Widget UX and appearance-preserving exports|
+|**Reports**|Plan-based CRM Report access control|
+|**Licensing**|Automatic logout after license removal|
+|**Billing**|Super Admin auto-pay configuration|
+|**Email**|Flexible email integration plan limits|
+|**Calendar**|Calendar reminder stability improvements|
+|**OAuth**|GPT OAuth fixes|
+|**CRM Data**|Dashboard/People import count fixes|
+
+---
+
+## 🔒 Administration & Security
+
+v1.4.0 strengthens the relationship between **subscriptions, licenses, usage, and feature access**.
+
+Plan-level feature controls, per-user usage tracking, automatic logout after license removal, and authenticated MCP tool access provide stronger enforcement across the platform.
+
+---
+
+## 🤖 Building the AI-Powered ThreadCRM Platform
+
+With **MCP Phase 1** and the new AI plan structure, this release establishes important infrastructure for the next generation of ThreadCRM's AI capabilities.
+
+ThreadCRM can now move beyond embedded AI experiences toward a broader ecosystem where AI assistants and agents can securely interact with CRM functionality through standardized interfaces.
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.4.0** focuses on making the platform more **AI-ready, subscription-aware, and extensible**.
+
+### Key Highlights
+
+- 🤖 Introduced **MCP Phase 1**
+- 🔌 Added MCP CRM module support
+- 🔐 Added authenticated MCP tool access
+- 🧠 Introduced **AI Starter, AI Growth, and AI Pro**
+- 📊 Added per-user AI credit and usage tracking
+- 💳 Improved subscription and add-on management
+- 👤 Strengthened license enforcement
+- 📈 Added plan-based controls for Reports and Custom Dashboards
+- 📊 Improved Custom Dashboard exports and widget UX
+- 💰 Added Super Admin auto-pay configuration
+- 📧 Improved email integration plan limits
+- 📅 Fixed calendar reminder stability issues
+- 🔑 Improved GPT OAuth handling
+
+**ThreadCRM v1.4.0 — Smarter AI. Stronger Controls. More Connected CRM.**
+</Update>
+
+<Update label="September 2026" description="v1.3.0">
+# ThreadCRM v1.3.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.3.0.png" />
+</Frame>
+
+**Release Date:** September 18, 2026  
+**Previous Version:** v1.2.0  
+**Codename:** Connected Intelligence
+
+## 🚀 Highlights
+
+ThreadCRM v1.3.0 brings major improvements to **Custom Dashboards, AI Assistant, Reporting, Workflow Automation, Social Insights, and Segmentation**. This release focuses on giving teams more flexibility to analyze their CRM data, automate follow-ups, and work with AI directly inside ThreadCRM.
+
+---
+
+## ✨ New Features
+
+### 1. Custom Dashboards
+
+Custom Dashboards receive a significant upgrade with more visualization and sharing capabilities.
+
+**What's new:**
+
+- Enhanced Custom Dashboard experience and UI.
+- Support for **stacked column charts**.
+- Improved dashboard customization experience.
+- Ability to create and configure personalized dashboards.
+- **Shareable public dashboard URLs** for sharing dashboard insights externally.
+
+**Why it matters:**  
+Teams can now build dashboards around the metrics that matter most to them and share insights with stakeholders without requiring them to navigate the entire CRM.
+
+---
+
+### 2. AI Assistant
+
+The existing Copilot experience has been evolved into a more capable **AI Assistant**.
+
+**What's new:**
+
+- Copilot renamed and enhanced as **AI Assistant**.
+- Added **Speech-to-Text (STT)** capabilities.
+- Continued improvements to AI functionality and integration across the CRM.
+- Improved AI workflow integration.
+
+**Why it matters:**  
+Users can interact with ThreadCRM's AI capabilities more naturally and use voice input for AI-assisted workflows and tasks.
+
+---
+
+### 3. Workflow Automation — Task Reminders
+
+Task management gets a new automation capability.
+
+**What's new:**
+
+- New **Task Reminder workflow**.
+- Ability to automate reminders related to CRM tasks.
+- Improved workflow support for task-based automation.
+
+**Why it matters:**  
+Teams can reduce manual follow-ups and ensure important CRM tasks don't get overlooked.
+
+---
+
+### 4. Advanced Reporting
+
+Reporting capabilities continue to expand with better report management and permissions.
+
+**What's new:**
+
+- Report actions support.
+- Report deletion permissions.
+- Improvements to report management and administration.    
+- Enhanced reporting APIs and functionality.
+
+**Why it matters:**  
+Administrators have greater control over how reports are managed and who can perform report-level actions.
+
+---
+
+### 5. Segmentation
+
+ThreadCRM now introduces backend support for CRM **Segments**.
+
+**What's new:**
+
+- Segment API implementation.
+- API support for retrieving all segments.
+- Foundation for enhanced audience and record segmentation.
+
+**Why it matters:**  
+Segments provide a foundation for organizing CRM records into targeted groups that can be used across sales, marketing, and automation workflows.
+
+---
+
+### 6. Instagram Insights
+
+Social Hub receives expanded Instagram analytics capabilities.
+
+**What's new:**
+
+- Added Instagram Insights.
+- Updated Instagram Insights experience.
+- Improvements to the Social Hub's Instagram analytics.
+
+**Why it matters:**  
+Teams can gain greater visibility into Instagram performance alongside their other customer engagement activities.
+
+---
+
+## 🔧 Improvements
+
+### AI & Workflow Improvements
+
+- Continued improvements to the AI feature set and workflow integration.
+- Lead scoring workflow reliability improvements.
+- Improved AI Assistant experience.
+- Better integration between AI functionality and existing CRM workflows.
+
+### Dashboard Experience
+
+- Refined Custom Dashboard UI.
+- Improved dashboard customization experience.
+- Additional chart visualization support.
+- Dashboard sharing through public URLs.
+
+### CRM Experience
+
+- Improved task filtering.
+- Improved People grid column behavior.
+- Missing metadata fields such as **Created By** and **Created By Source** are now properly handled.
+- Improved email composition experience.
+- Selected deals now prefill the appropriate email recipient.
+
+### Social Hub
+
+- Improved Instagram Insights implementation and presentation.
+
+### User & Usage Management
+
+- Per-user usage limits are now displayed.
+- Improvements to the invitation and session login experience.
+
+---
+
+## 🐛 Bug Fixes
+
+This release also includes several fixes across CRM, workflows, email, AI, and administration.
+
+### CRM & Tasks
+
+- Fixed Task filtering issues.
+- Fixed People grid behavior for additional email and phone columns.
+- Fixed missing record metadata fields.
+- Fixed deal email recipient prefill behavior.
+
+### AI & Workflows
+
+- Fixed issues affecting Lead Scoring workflows.
+- Fixed issues encountered in AI workflow functionality.
+- Fixed Comment Train modal/button behavior.
+- Improved reliability across AI-related workflows.
+
+### Email
+
+- Fixed email subject cursor positioning.
+- Improved subject-line editing behavior when composing emails.
+
+### Authentication & Invitations
+
+- Fixed issues related to invited-user session login.
+- Improved user access and usage-limit handling.
+
+---
+
+## 📊 What's New at a Glance
+
+|Area|What's New|
+|---|---|
+|**Custom Dashboards**|Dashboard customization, stacked column charts, public sharing|
+|**AI Assistant**|Copilot evolution, Speech-to-Text|
+|**Workflows**|Task Reminder automation, AI workflow improvements|
+|**Reporting**|Report actions and deletion permissions|
+|**Segmentation**|Segment APIs and segment retrieval|
+|**Social Hub**|Instagram Insights|
+|**CRM**|Better task filtering, metadata and deal email handling|
+|**User Management**|Per-user usage visibility and invite-session improvements|
+|**Email**|Improved subject editing and cursor behavior|
+
+---
+
+## 🔒 Reliability & Administration
+
+v1.3.0 also includes a series of fixes and refinements aimed at improving the reliability of CRM workflows, user management, reporting, AI functionality, and social integrations.
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.3.0** makes the platform more customizable, intelligent, and automation-ready.
+
+With enhanced **Custom Dashboards**, a new **AI Assistant with STT**, **Task Reminder workflows**, expanded **Reporting**, new **Segmentation APIs**, and **Instagram Insights**, this release gives teams more ways to understand their data and automate their day-to-day CRM operations.
+
+### Key Highlights
+
+- 📊 Build and share **Custom Dashboards**
+- 🤖 Work with the new **AI Assistant**
+- 🎙️ Use **Speech-to-Text** with AI
+- ⏰ Automate **Task Reminders**
+- 📑 Manage **Reports** with improved actions and permissions
+- 🎯 Create and retrieve **CRM Segments**
+- 📸 Track **Instagram Insights**    
+- ⚡ Enjoy improved CRM, workflow, email, and user-management reliability
+
+</Update>
+
 <Update label="September 2026" description="v1.2.0">
 # ThreadCRM v1.2.0
 
