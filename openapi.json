@@ -7199,11 +7199,8 @@
           "salutation": {
             "type": "string"
           },
-          "nameFirstName": {
-            "type": "string"
-          },
-          "nameLastName": {
-            "type": "string"
+          "name": {
+            "$ref": "#/components/schemas/NameDto"
           },
           "emails": {
             "$ref": "#/components/schemas/EmailDto"
