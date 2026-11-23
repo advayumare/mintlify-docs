@@ -3,6 +3,658 @@ title: "Changelog"
 description: "Product updates and announcements"
 icon: "list-check"
 ---
+<Update label="November 2026" description="v1.9.0">
+# ThreadCRM v1.9.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.9.0.png" />
+</Frame>
+
+**Release Date:** November 23, 2026  
+**Previous Version:** v1.8.0  
+**Codename:** Flexible Workflows
+
+## 🚀 Highlights
+
+ThreadCRM v1.9.0 introduces more flexible CRM form configurations, improved reference onboarding, and important reliability improvements across call campaigns, WhatsApp templates, and subscription billing.
+
+The release also enhances CRM search by separating standard fields from custom fields, making it easier to find and select the right attributes.
+
+---
+
+## ✨ New Features
+
+### 1. Dynamic Form Layouts for Leads & Deals
+
+Lead and Deal forms receive a new configurable layout capability.
+
+**What's new:**
+- Introduced form layout configuration APIs.
+- Added initial support for customizable Lead and Deal form layouts.
+- Added an optional `required` flag to form layout fields.
+- Improved support for configuring field requirements.
+- Extended form layout functionality to support Deals.
+
+**Why it matters:**
+
+Teams can configure their Lead and Deal forms to match their business processes, decide which fields are required, and create more structured data-entry experiences.
+
+### 2. Enhanced Reference Onboarding & Signing
+
+Reference onboarding receives additional signing capabilities.
+
+**What's new:**
+- Updated onboarding signing to use the Lead's `referenceId`.
+- Added a dedicated Steps Sign endpoint.
+- Improved the onboarding signing flow.
+
+**Why it matters:**
+
+Using the Lead reference ID provides a consistent reference for onboarding operations and supports a more structured signing process.
+
+---
+
+## 🔧 Improvements
+
+### 3. CRM Search Enhancements
+
+The CRM search dropdown experience has been improved.
+
+**What's new:**
+- Standard fields and custom fields are now displayed in separate groups.
+- Improved organization of available fields in search dropdowns.
+
+**Why it matters:**
+
+Users can distinguish standard CRM attributes from workspace-specific custom fields, making field selection easier and more intuitive.
+
+### 4. WhatsApp Template Catalog
+
+WhatsApp template catalog ordering has been improved.
+
+**What's new:**
+- Added support for Meta's `last_updated_time` when ordering WhatsApp templates.
+- Improved template catalog sorting based on the latest update timestamp.
+
+**Why it matters:**
+
+Users can get a more accurate view of recently updated WhatsApp templates when browsing the template catalog.
+
+---
+
+## 💳 Billing & Subscription Improvements
+
+### 5. Improved Paid Plan Upgrade Billing
+
+Subscription billing has been refined to ensure better alignment during paid plan changes.
+
+**What's new:**
+- Improved billing period alignment during plan upgrades.
+- Updated upgrade invoice handling for paid plan changes.
+- Improved consistency between subscription billing periods and upgrade invoices.
+
+**Why it matters:**
+
+Customers receive more consistent billing treatment when upgrading between paid plans, reducing discrepancies between subscription periods and invoice calculations.
+
+---
+
+## 📞 Call Campaign Reliability
+
+### 6. Automatic Call Campaign Expiration
+
+Call campaign execution now handles expired campaigns more reliably.
+
+**What's new:**
+- Call campaigns automatically expire after their configured end date and sending window have passed.
+- Further calls are skipped once a campaign has expired.
+- Improved handling of campaign execution after the allowed calling period.
+
+**Why it matters:**
+
+This prevents calls from being initiated outside the configured campaign schedule and helps ensure that automated calling respects campaign timing restrictions.
+
+---
+
+## 🐛 Bug Fixes
+
+### Call Campaigns
+- Fixed campaigns continuing to trigger calls after their end date and send window.
+- Improved expiration handling to prevent further calls after campaign expiry.
+
+### WhatsApp
+- Fixed WhatsApp template catalog ordering using Meta's `last_updated_time`.
+
+### Billing
+- Fixed billing period alignment during paid plan upgrades.
+- Improved upgrade invoice calculations and handling.
+
+### CRM Forms
+- Improved Lead and Deal form layout API handling.
+- Improved field requirement configuration.
+
+### Reference Onboarding
+- Improved signing flow using Lead reference IDs.
+- Added support for the Steps Sign endpoint.
+
+---
+
+## 📋 What's New at a Glance
+
+| Area | What's New |
+|---|---|
+| **Form Builder** | Configurable Lead and Deal form layouts |
+| **Form Fields** | Optional required-field configuration |
+| **Lead & Deal Management** | Improved form layout APIs |
+| **Reference Onboarding** | Lead reference ID-based signing |
+| **Signing** | New Steps Sign endpoint |
+| **CRM Search** | Separate standard and custom field groups |
+| **WhatsApp** | Improved template catalog ordering |
+| **Call Campaigns** | Automatic expiration and call prevention |
+| **Billing** | Improved paid plan upgrade billing alignment |
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.9.0 — Flexible Forms. Smarter Onboarding. Reliable Automation.**
+
+This release makes ThreadCRM more adaptable to different business processes while improving the reliability of automated campaigns and subscription management.
+
+### Key Highlights
+
+- 📝 Introduced configurable Lead and Deal form layouts.
+- ✅ Added optional required-field settings.
+- 🔗 Enhanced reference onboarding with Lead reference ID-based signing.
+- ✍️ Added a dedicated Steps Sign endpoint.
+- 🔍 Improved CRM search with separate standard and custom field groups.
+- 💬 Improved WhatsApp template catalog ordering.
+- 📞 Added automatic call campaign expiration.
+- 🛑 Prevented calls from running after campaign expiry.
+- 💳 Improved billing period alignment during paid plan upgrades.
+- 🧾 Improved upgrade invoice handling.
+
+**Thank you for using ThreadCRM.**
+
+</Update>
+
+<Update label="November 2026" description="v1.8.0">
+# ThreadCRM v1.8.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.8.0.png" />
+</Frame>
+
+**Release Date:** November 5, 2026  
+**Previous Version:** v1.7.0  
+**Codename:** Connected Automation
+
+## 🚀 Highlights
+
+ThreadCRM v1.8.0 strengthens WhatsApp integration and workflow connectivity with new webhook relay capabilities, secure builder onboarding, and improvements to WhatsApp configuration and media handling.
+
+This release also includes a fix for campaign activity sorting in workspace-specific database schemas.
+
+---
+
+## ✨ New Features
+
+### 1. WhatsApp Webhook Relay
+
+ThreadCRM introduces a WhatsApp Webhook Relay capability.
+
+**What's new:**
+- Added WhatsApp webhook relay functionality.
+- Introduced a mechanism to relay WhatsApp webhook events into the application.
+
+**Why it matters:**
+
+Webhook relay capabilities provide a foundation for handling and forwarding WhatsApp events more reliably, supporting better integration between WhatsApp and ThreadCRM workflows.
+
+### 2. Secure Builder Onboarding for Workflows
+
+Added a new HMAC signing endpoint for builder onboarding.
+
+**What's new:**
+- Added a builder onboarding HMAC signing endpoint.
+- Enables signed onboarding requests for workflow integration.
+
+**Why it matters:**
+
+HMAC-based signing provides a mechanism for validating onboarding requests and establishing a more secure integration between the workflow builder and ThreadCRM.
+
+---
+
+## 💬 WhatsApp Integration Improvements
+
+### 3. WhatsApp Configuration Validation
+
+Improved validation of WhatsApp application configuration.
+
+**What's new:**
+- Added validation for Meta App ID format.
+- Improved WhatsApp configuration handling.
+
+**Why it matters:**
+
+Early validation helps identify incorrectly formatted Meta App IDs during configuration and reduces avoidable integration errors.
+
+### 4. Improved WhatsApp Media Uploads
+
+WhatsApp media upload handling has been enhanced.
+
+**What's new:**
+- Improved media upload handling.
+- Enhanced reliability of WhatsApp media-related operations.
+
+**Why it matters:**
+
+These improvements help provide a more consistent experience when working with media through WhatsApp integrations.
+
+---
+
+## 🐛 Bug Fixes
+
+### Campaign Activities
+- Fixed SQL sorting logic for campaign activity sent-time ordering.
+- Improved compatibility with workspace-specific database schemas.
+
+This ensures campaign activity records can be sorted by sent time correctly in the workspace database environment.
+
+---
+
+## 📋 What's New at a Glance
+
+| Area | What's New |
+|---|---|
+| **WhatsApp** | New webhook relay functionality |
+| **Workflow Integration** | HMAC signing endpoint for builder onboarding |
+| **WhatsApp Configuration** | Meta App ID format validation |
+| **WhatsApp Media** | Improved media upload handling |
+| **Campaign Activities** | Fixed sent-time sorting SQL for workspace schemas |
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.8.0 — Secure Integrations. Connected Workflows. Reliable Messaging.**
+
+This release focuses on strengthening the integration layer of ThreadCRM, particularly around WhatsApp and workflow automation.
+
+### Key Highlights
+- 💬 Introduced WhatsApp Webhook Relay.
+- 🔐 Added HMAC signing for workflow builder onboarding.
+- 🔎 Improved Meta App ID validation.
+- 📎 Enhanced WhatsApp media upload handling.
+- 📊 Fixed Campaign Activity sent-time sorting.
+- ⚙️ Improved compatibility with workspace-specific database schemas.
+
+**Thank you for using ThreadCRM.**
+
+</Update>
+
+<Update label="November 2026" description="v1.7.0">
+# ThreadCRM v1.7.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.7.0.png" />
+</Frame>
+
+**Release Date:** November 3, 2026  
+**Previous Version:** v1.6.0  
+**Codename:** Organized Engagement
+
+## 🚀 Highlights
+
+ThreadCRM v1.7.0 brings better organization and management capabilities to Campaigns and Templates, alongside improvements to workflow configuration and Inbox usability.
+
+This release introduces campaign grouping, separate groups for Email and WhatsApp templates, enhanced campaign activity filters, and Lead Stage filtering within workflow nodes.
+
+---
+
+## ✨ New Features
+
+### 1. Campaign Groups & Organization
+
+Campaign management now supports grouping to help users organize campaigns more effectively.
+
+**What's new:**
+- Added a Campaign Groups interface.
+- Create new campaign groups.
+- Move campaigns between groups.
+- Rename existing groups.
+- Improved group creation modal.
+- Enhanced move-to-group flyout experience.
+
+**Why it matters:**
+
+Users can organize campaigns into meaningful groups, making it easier to manage multiple campaigns and maintain a structured campaign workspace.
+
+### 2. Separate Email & WhatsApp Template Groups
+
+Template management now supports separate grouping for different communication channels.
+
+**What's new:**
+- Introduced separate groups for Email Templates.
+- Introduced separate groups for WhatsApp Templates.
+- Added a list-based group management interface.
+- Improved template organization and navigation.
+
+**Why it matters:**
+
+Users can organize email and WhatsApp templates independently, making templates easier to find and manage as communication libraries grow.
+
+### 3. Lead Stage Filtering in Workflows
+
+Workflow configuration receives an additional filtering capability.
+
+**What's new:**
+- Added a Lead Stage dropdown to workflow filter nodes.
+- Users can select lead stages while configuring workflow conditions.
+
+**Why it matters:**
+
+Teams can build more targeted workflows based on the current stage of a lead, enabling better segmentation and stage-specific automation.
+
+### 4. Expanded Campaign Activity Filters
+
+Campaign activity tracking now provides additional status-filtering options.
+
+**What's new:**
+- Expanded the available status filters in Campaign Activities.
+- Improved campaign activity filtering experience.
+
+**Why it matters:**
+
+Users can narrow down campaign activity records more effectively and get better visibility into campaign execution and engagement.
+
+---
+
+## 🔧 Improvements
+
+### Campaign & Group Management
+- Improved group rename interactions.
+- Enhanced move-to-group flyouts.
+- Improved create-group modal focus styling.
+- Refined campaign group list UI.
+
+### Template Management
+- Improved Email and WhatsApp template group organization.
+- Enhanced template list presentation.
+- Improved test email loading experience.
+- Centered the test email loader for better visual consistency.
+
+### Inbox & Email
+- Improved mailbox authentication error messages.
+- Users now receive clearer authentication-related feedback in the Inbox.
+- Improved test email modal presentation with background content blur.
+
+### Workflow Automation
+- Improved workflow filter configuration.
+- Added Lead Stage selection to filter nodes.
+
+---
+
+## 🐛 Bug Fixes
+
+### Inbox & Authentication
+- Fixed unclear authentication error messages in the Inbox.
+- Improved feedback when mailbox authentication encounters an issue.
+
+### Email Templates
+- Fixed test email loader alignment.
+- Improved modal presentation during test email operations.
+
+### Campaign & Group Management
+- Fixed group rename behavior.
+- Fixed move-to-group flyout interactions.
+- Improved create-group modal focus styling.
+
+---
+
+## 📋 What's New at a Glance
+
+| Area | What's New |
+|---|---|
+| **Campaigns** | Campaign groups, group creation, renaming and moving campaigns |
+| **Templates** | Separate Email and WhatsApp template groups |
+| **Workflows** | Lead Stage dropdown in filter nodes |
+| **Campaign Activities** | Expanded activity status filters |
+| **Inbox** | Clearer mailbox authentication errors |
+| **Email Templates** | Improved test email loader and modal UI |
+| **Group Management** | Improved flyouts, rename interactions and modal styling |
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.7.0 — Better Organization. Smarter Filtering. Simplified Campaign Management.**
+
+This release makes it easier for teams to organize their communication assets, manage campaigns, and build more targeted workflow automations.
+
+### Key Highlights
+- 📁 Organize campaigns using Campaign Groups.
+- 🔄 Create, rename, and move campaigns between groups.
+- 📧 Manage Email Templates with dedicated groups.
+- 💬 Manage WhatsApp Templates with dedicated groups.
+- 🎯 Filter workflow conditions using Lead Stages.
+- 📊 Access expanded Campaign Activity status filters.
+- 🔐 Get clearer mailbox authentication error messages.
+- ✨ Enjoy a more polished campaign and template management experience.
+
+**Thank you for using ThreadCRM.**
+
+</Update>
+
+<Update label="October 2026" description="v1.6.0">
+# ThreadCRM v1.6.0
+
+<Frame>
+  <img src="/images/releases/release_banner_1.6.0.png" />
+</Frame>
+
+**Release Date:** October 23, 2026  
+**Previous Version:** v1.5.0  
+**Codename:** Smarter Engagement
+
+## 🚀 Highlights
+
+ThreadCRM v1.6.0 introduces enhancements to reference verification, subscription flexibility, social media insights, and workflow management. This release also improves WhatsApp template handling, custom dashboards, email templates, and storage-limit enforcement.
+
+Key improvements include a complete reference verification flow, independent plans for workspace members, Meta Ads insights, and better control over automated workflows.
+
+---
+
+## ✨ New Features
+
+### 1. Reference Verification & Automated Invitations
+
+Reference verification receives a significant expansion with dedicated APIs and a more complete verification workflow.
+
+**What's new:**
+- Added reference verification APIs.
+- Introduced a reference verification questionnaire.
+- Added draft completion functionality for reference verification.
+- Automatically send invitation emails when a reference is created.
+- Improved tracking of reference verification calls.
+- Added support for missed verification retries and preference follow-ups.
+- Added the ability for references to reschedule a saved slot within 30 days.
+- Added workspace feature support for reference verification.
+
+**Why it matters:**  
+Teams can manage reference verification more efficiently, from sending invitations and collecting responses to handling missed calls and rescheduling verification sessions.
+
+### 2. Flexible Plans for Workspace Members
+
+Workspace subscription management now supports more flexible purchasing and user onboarding.
+
+**What's new:**
+- Administrators can purchase separate plans for individual members.
+- Users can be invited onto separately purchased plans.
+- Members covered by purchased plans are identified as licensed.
+- Expired plans automatically transition to the Free plan.
+- Invoices are generated for member plan purchases.
+- Invitations expire after 48 hours.
+- A seat is counted only after the invited user joins the workspace.
+
+**Why it matters:**  
+Organizations gain greater flexibility when managing subscriptions across members, while seat allocation more accurately reflects actual workspace participation.
+
+### 3. Meta Ads Insights & Social Hub Connections
+
+Social Hub receives new advertising insights and improved OAuth connection management.
+
+**What's new:**
+- Added Meta Ads insights.
+- Separated OAuth connections within Social Hub.
+
+**Why it matters:**  
+Users gain access to Meta advertising insights and benefit from more clearly separated social platform authentication connections.
+
+### 4. Workflow Controls
+
+Workflow management now includes a dedicated option to disable workflows.
+
+**What's new:**
+- Added a workflow disable option.
+
+**Why it matters:**  
+Users can disable a workflow when automation should temporarily stop, without needing to remove the workflow configuration.
+
+### 5. Improved CRM Data Flexibility
+
+CRM record management receives additional flexibility for email addresses and custom fields.
+
+**What's new:**
+- Leads can contain duplicate email addresses when the account type is Artisty.
+- Improved custom field handling across CRM operations.
+
+**Why it matters:**  
+The Artisty integration can accommodate its specific lead-email requirements, while custom fields behave more reliably during record updates.
+
+---
+
+## 📊 Dashboard & Reporting Improvements
+
+### Custom Dashboards
+- Improved dashboard reliability.
+- Fixed issues affecting Lead Source charts.
+- Improved custom dashboard filtering and chart behavior.
+- Enhanced dashboard report filtering and pagination performance.
+- Added performance improvements for dashboard tooltips.
+- Fixed custom dashboard issues identified during testing.
+
+### CRM Reporting
+- Optimized dashboard report filtering.
+- Improved pagination performance.
+- Improved Lead Source filtering and chart reliability.
+
+These changes help teams analyze CRM data more reliably and navigate larger reports more efficiently.
+
+---
+
+## 💬 WhatsApp & Email Improvements
+
+### WhatsApp
+- Improved WhatsApp template placeholder normalization.
+- Improved handling of errors returned by Meta.
+- Fixed invalid-parameter issues related to WhatsApp templates.
+
+### Email
+- Fixed email template issues.
+- Improved reference invitation email handling.
+- Routed reference invitation email errors and documentation to the mailer service.
+
+These improvements help make messaging and email workflows more consistent and easier to troubleshoot.
+
+---
+
+## 💾 Storage & Subscription Controls
+
+### Storage Limits
+- File uploads are now supported up to the storage limit included in the user's plan, even without a connected Drive.
+
+### Plan Management
+- Improved handling of expired subscriptions.
+- Improved member-plan invoicing.
+- Improved licensed-member identification.
+- Seat counts now reflect users who have actually joined.
+- Invitation expiration is enforced after 48 hours.
+
+These updates improve the alignment between purchased subscription capacity, workspace membership, and available storage.
+
+---
+
+## 🐛 Bug Fixes
+
+### CRM & Custom Fields
+- Fixed custom field issues affecting CRM operations.
+- Improved Lead updates for Artisty account requirements.
+- Fixed Custom Dashboard issues.
+- Fixed Lead Source chart behavior.
+
+### WhatsApp
+- Fixed template placeholder handling.
+- Improved Meta API error handling for invalid template parameters.
+
+### Email
+- Fixed email template issues.
+- Improved reference invitation email error handling.
+
+### Authentication & Access
+- Fixed a login issue.
+- Improved invitation expiration and licensed-seat allocation behavior.
+
+### AI & Lead Scoring
+- Added threshold locking in the Lead Scoring modal to improve threshold handling.
+
+### Storage
+- Fixed storage behavior so users can upload files up to their plan's storage limit without requiring Drive.
+
+---
+
+## 📋 What's New at a Glance
+
+| Area | Improvements |
+|---|---|
+| **Reference Verification** | Verification APIs, questionnaires, draft completion, invitations and retries |
+| **Scheduling** | Reference rescheduling within 30 days |
+| **Subscriptions** | Separate plans for members and automatic Free-plan fallback |
+| **User Management** | 48-hour invitation expiry and more accurate seat counting |
+| **Social Hub** | Meta Ads insights and separated OAuth connections |
+| **Workflows** | Option to disable workflows |
+| **WhatsApp** | Better template placeholders and Meta error handling |
+| **Email** | Email template fixes and improved invitation email handling |
+| **Custom Dashboards** | Improved filters, charts and tooltip performance |
+| **Reporting** | Optimized filtering and pagination |
+| **Storage** | Plan-based uploads without a connected Drive |
+| **AI & Lead Scoring** | Threshold handling improvements |
+
+---
+
+## 🎯 Summary
+
+**ThreadCRM v1.6.0 — Smarter Engagement. Flexible Plans. More Reliable Workflows.**
+
+This release strengthens the platform across customer communication, reference verification, subscriptions, and reporting.
+
+### Key Highlights
+- ✅ Complete reference verification and invitation workflows
+- 📅 Reference rescheduling within 30 days
+- 💳 Separate subscription plans for workspace members
+- 👥 More accurate licensed-seat allocation
+- 📊 Meta Ads insights in Social Hub
+- ⚙️ Ability to disable workflows
+- 💬 More reliable WhatsApp template handling
+- 📧 Improved email templates and invitation delivery
+- 📈 Better Custom Dashboard and reporting performance
+- 💾 Plan-based file uploads without a connected Drive
+- 🔐 Improved login, invitation, and subscription handling
+
+**Thank you for using ThreadCRM.**
+
+
+</Update>
 
 <Update label="October 2026" description="v1.5.0">
 # ThreadCRM v1.5.0
